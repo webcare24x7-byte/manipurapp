@@ -1,0 +1,15 @@
+SET NAMES utf8mb4; START TRANSACTION;
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'View Tourism Experiences','tourism.experiences.view' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.experiences.view');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Create Tourism Experiences','tourism.experiences.create' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.experiences.create');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Edit Tourism Experiences','tourism.experiences.edit' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.experiences.edit');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Delete Tourism Experiences','tourism.experiences.delete' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.experiences.delete');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'View Tourism Events','tourism.events.view' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.events.view');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Create Tourism Events','tourism.events.create' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.events.create');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Edit Tourism Events','tourism.events.edit' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.events.edit');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Delete Tourism Events','tourism.events.delete' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.events.delete');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'View Tourism Reviews','tourism.reviews.view' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.reviews.view');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Moderate Tourism Reviews','tourism.reviews.moderate' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.reviews.moderate');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'View Tourism Trip Plans','tourism.trips.view' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.trips.view');
+INSERT INTO permissions(uuid,name,slug) SELECT UUID(),'Manage Tourism Trip Plans','tourism.trips.manage' WHERE NOT EXISTS(SELECT 1 FROM permissions WHERE slug='tourism.trips.manage');
+INSERT INTO role_permissions(role_id,permission_id) SELECT r.id,p.id FROM roles r CROSS JOIN permissions p WHERE r.slug='church_admin' AND p.slug IN ('tourism.experiences.view','tourism.experiences.create','tourism.experiences.edit','tourism.experiences.delete','tourism.events.view','tourism.events.create','tourism.events.edit','tourism.events.delete','tourism.reviews.view','tourism.reviews.moderate','tourism.trips.view','tourism.trips.manage') AND NOT EXISTS(SELECT 1 FROM role_permissions rp WHERE rp.role_id=r.id AND rp.permission_id=p.id);
+COMMIT;

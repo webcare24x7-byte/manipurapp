@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS member_notifications (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    uuid CHAR(36) NOT NULL,
+    tenant_id BIGINT UNSIGNED NOT NULL,
+    member_id BIGINT UNSIGNED NOT NULL,
+    source VARCHAR(40) NOT NULL,
+    notification_type VARCHAR(80) NOT NULL,
+    reference_id BIGINT UNSIGNED NOT NULL,
+    source_event_id BIGINT UNSIGNED NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    action_url VARCHAR(500) DEFAULT NULL,
+    created_at DATETIME NOT NULL,
+    read_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY uq_member_notification_uuid (uuid),
+    UNIQUE KEY uq_member_notification_event (tenant_id, member_id, source, source_event_id),
+    KEY idx_member_notifications_unread (tenant_id, member_id, read_at, created_at),
+    KEY idx_member_notifications_created (tenant_id, member_id, created_at),
+    CONSTRAINT fk_member_notifications_member FOREIGN KEY (member_id) REFERENCES members(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

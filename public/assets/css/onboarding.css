@@ -1,0 +1,1773 @@
+/* =========================================================
+   CHURCHOS ONBOARDING
+   Modern SaaS Authentication Theme
+========================================================= */
+
+:root {
+    --onboarding-primary: #5146e5;
+    --onboarding-primary-dark: #4037c8;
+    --onboarding-primary-soft: #eeecff;
+
+    --onboarding-navy: #111936;
+
+    --onboarding-text: #182038;
+    --onboarding-muted: #69738a;
+    --onboarding-light: #8c95a8;
+
+    --onboarding-border: #e6e8ef;
+
+    --onboarding-background: #f7f8fc;
+
+    --onboarding-white: #ffffff;
+
+    --onboarding-success: #16a675;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.onboarding-body {
+    margin: 0;
+    min-height: 100vh;
+
+    background: var(--onboarding-background);
+
+    color: var(--onboarding-text);
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+}
+
+.onboarding-body *,
+.onboarding-body *::before,
+.onboarding-body *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.onboarding-shell {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(390px, 43%)
+        1fr;
+}
+
+
+/* =========================================================
+   BRAND PANEL
+========================================================= */
+
+.onboarding-brand-panel {
+    position: relative;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(126,117,255,.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(83,72,210,.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #111936 0%,
+            #1a2250 55%,
+            #242267 100%
+        );
+}
+
+.onboarding-brand-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -230px;
+    top: 90px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 0 70px rgba(255,255,255,.018),
+        0 0 0 140px rgba(255,255,255,.012);
+}
+
+.onboarding-brand-panel::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: -160px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(111,96,246,.16);
+
+    filter: blur(30px);
+}
+
+
+.brand-panel-inner {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        42px clamp(35px, 5vw, 72px);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.onboarding-brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+.onboarding-brand-mark {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #aaa3ff;
+}
+
+.onboarding-brand-mark svg {
+    width: 100%;
+    height: 100%;
+}
+
+.onboarding-brand-name {
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.onboarding-brand-name span {
+    color: #8178ff;
+}
+
+
+/* =========================================================
+   BRAND MESSAGE
+========================================================= */
+
+.brand-message {
+    max-width: 470px;
+
+    margin-top: auto;
+
+    margin-bottom: 35px;
+}
+
+.brand-eyebrow {
+    display: inline-flex;
+
+    padding: 7px 10px;
+
+    border-radius: 100px;
+
+    color: #b4afff;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.brand-message h1 {
+    margin:
+        20px 0 0;
+
+    color: #ffffff;
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size:
+        clamp(38px, 4vw, 56px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+}
+
+.brand-message h1 span {
+    display: block;
+
+    color: #8178ff;
+}
+
+.brand-message p {
+    max-width: 450px;
+
+    margin-top: 20px;
+
+    color:
+        rgba(235,238,250,.68);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BRAND FEATURES
+========================================================= */
+
+.brand-features {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 9px;
+
+    max-width: 510px;
+}
+
+.brand-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px;
+
+    border-radius: 11px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+.brand-feature-icon {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #aaa3ff;
+
+    background:
+        rgba(129,120,255,.12);
+
+    font-size: 13px;
+}
+
+.brand-feature strong {
+    display: block;
+
+    color: #f4f5fa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.brand-feature small {
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        rgba(223,227,242,.48);
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   BRAND FOOTER
+========================================================= */
+
+.brand-panel-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-top: 30px;
+
+    margin-top: 35px;
+
+    color:
+        rgba(221,225,240,.42);
+
+    font-size: 8px;
+}
+
+.secure-badge {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.secure-badge span {
+    width: 17px;
+    height: 17px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #75ddb7;
+
+    background:
+        rgba(21,166,117,.12);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.onboarding-main {
+    min-width: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        50px 35px;
+
+    background:
+        #f8f9fc;
+}
+
+.onboarding-main-inner {
+    width: 100%;
+
+    max-width: 540px;
+}
+
+
+/* =========================================================
+   MOBILE BRAND
+========================================================= */
+
+.mobile-onboarding-brand {
+    display: none;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.onboarding-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.onboarding-header {
+    text-align: center;
+}
+
+.welcome-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin:
+        0 auto 17px;
+
+    border-radius: 14px;
+
+    color:
+        var(--onboarding-primary);
+
+    background:
+        var(--onboarding-primary-soft);
+}
+
+.welcome-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.onboarding-eyebrow {
+    color:
+        var(--onboarding-primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+.onboarding-header h1 {
+    margin:
+        8px 0 0;
+
+    color:
+        var(--onboarding-navy);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 35px;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1.15;
+}
+
+.onboarding-header > p {
+    max-width: 410px;
+
+    margin:
+        12px auto 0;
+
+    color:
+        var(--onboarding-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SEARCH CARD
+========================================================= */
+
+.search-card {
+    position: relative;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border:
+        1px solid rgba(220,223,233,.9);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    box-shadow:
+        0 24px 60px rgba(28,35,70,.065),
+        0 4px 12px rgba(28,35,70,.025);
+
+    backdrop-filter:
+        blur(16px);
+}
+
+.search-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.95),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   SEARCH FORM
+========================================================= */
+
+.church-search-form {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   FIELD LABEL
+========================================================= */
+
+.field-label {
+    display: block;
+
+    margin:
+        0 0 4px 2px;
+
+    color:
+        #30374b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: -.05px;
+}
+
+
+/* =========================================================
+   FIELD HELPER
+========================================================= */
+
+.field-helper {
+    margin:
+        0 0 9px 2px;
+
+    color:
+        #9299a8;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PREMIUM INPUT WRAPPER
+========================================================= */
+
+.search-input-wrapper {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    height: 58px;
+
+    border:
+        1px solid #dfe2ea;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fafbfe 100%
+        );
+
+    box-shadow:
+        0 1px 2px rgba(20,25,45,.03),
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+========================================================= */
+
+.search-input-wrapper:hover {
+    border-color:
+        #cfd3df;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 3px 12px rgba(30,35,70,.045);
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.search-input-wrapper:focus-within {
+    border-color:
+        #7066ee;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(81,70,229,.08),
+        0 8px 25px rgba(81,70,229,.07);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.search-input-icon {
+    position: absolute;
+
+    left: 17px;
+    top: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    display: grid;
+
+    place-items: center;
+
+    color:
+        #8991a3;
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.search-input-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.search-input-wrapper:focus-within
+.search-input-icon {
+    color:
+        #5b50e7;
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.search-input-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    padding:
+        0 52px 0 49px;
+
+    border: 0;
+
+    outline: none;
+
+    color:
+        #1b2338;
+
+    background:
+        transparent;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: -.05px;
+}
+
+.search-input-wrapper input::placeholder {
+    color:
+        #9ba2b1;
+
+    font-weight: 400;
+
+    transition:
+        color .2s ease;
+}
+
+.search-input-wrapper:focus-within
+input::placeholder {
+    color:
+        #b0b5c1;
+}
+
+
+/* =========================================================
+   CLEAR SEARCH BUTTON
+========================================================= */
+
+.clear-search {
+    position: absolute;
+
+    right: 13px;
+    top: 50%;
+
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    color:
+        #858c9c;
+
+    background:
+        #f0f1f5;
+
+    font-size: 16px;
+
+    line-height: 1;
+
+    transform:
+        translateY(-50%);
+
+    cursor: pointer;
+
+    transition:
+        background .18s ease,
+        color .18s ease,
+        transform .18s ease;
+}
+
+.clear-search:hover {
+    color:
+        #5146e5;
+
+    background:
+        #eceaff;
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.onboarding-button {
+    width: 100%;
+
+    min-height: 53px;
+
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        opacity .18s ease;
+}
+
+.onboarding-button-primary {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 0;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6559ef 0%,
+            #5146e5 50%,
+            #473bc9 100%
+        );
+
+    box-shadow:
+        0 8px 18px rgba(81,70,229,.18),
+        inset 0 1px 0 rgba(255,255,255,.16);
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+========================================================= */
+
+.onboarding-button-primary::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left .5s ease;
+}
+
+.onboarding-button-primary:hover::before {
+    left: 130%;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.onboarding-button-primary:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 12px 24px rgba(81,70,229,.23),
+        inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.onboarding-button-primary:active {
+    transform:
+        translateY(0);
+
+    box-shadow:
+        0 5px 12px rgba(81,70,229,.18);
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.button-arrow {
+    width: 24px;
+    height: 24px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-left: 2px;
+
+    border-radius: 7px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    font-size: 14px;
+
+    transition:
+        transform .18s ease,
+        background .18s ease;
+}
+
+.onboarding-button-primary:hover
+.button-arrow {
+    transform:
+        translateX(2px);
+
+    background:
+        rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   BUTTON LOADING
+========================================================= */
+
+.onboarding-button.is-loading {
+    opacity: .75;
+
+    cursor: wait;
+}
+
+.onboarding-button.is-loading
+.button-arrow {
+    animation:
+        onboarding-spin .8s linear infinite;
+}
+
+@keyframes onboarding-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.onboarding-alert {
+    display: flex;
+
+    gap: 11px;
+
+    margin-top: 17px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+}
+
+.onboarding-alert-error {
+    color:
+        #9a3f52;
+
+    border:
+        1px solid #f3d5dc;
+
+    background:
+        #fff5f7;
+}
+
+.alert-icon {
+    width: 21px;
+    height: 21px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color:
+        #b64a60;
+
+    background:
+        #ffe3e8;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.onboarding-alert strong {
+    display: block;
+
+    font-size: 10px;
+}
+
+.onboarding-alert p {
+    margin-top: 2px;
+
+    color: inherit;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.church-results {
+    margin-top: 26px;
+}
+
+.results-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.results-eyebrow {
+    display: block;
+
+    color:
+        var(--onboarding-primary);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.results-heading h2 {
+    margin-top: 3px;
+
+    color:
+        var(--onboarding-navy);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: -.5px;
+}
+
+.results-count {
+    padding:
+        5px 8px;
+
+    border-radius: 6px;
+
+    color:
+        #70798c;
+
+    background:
+        #f1f2f6;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+.church-result-list {
+    display: grid;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   CHURCH RESULT CARD
+========================================================= */
+
+.church-result-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 72px;
+
+    padding:
+        11px 13px;
+
+    border:
+        1px solid #e6e8ef;
+
+    border-radius: 14px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fbfcfe
+        );
+
+    box-shadow:
+        0 1px 2px rgba(20,25,50,.02);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease,
+        background .2s ease;
+}
+
+.church-result-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #cfcaff;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(35,40,80,.075);
+}
+
+
+/* =========================================================
+   CHURCH AVATAR
+========================================================= */
+
+.church-result-avatar {
+    width: 43px;
+    height: 43px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    color:
+        #5146e5;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0eeff,
+            #e7e4ff
+        );
+
+    border:
+        1px solid #dfdcff;
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHURCH INFORMATION
+========================================================= */
+
+.church-result-information {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.church-result-information strong {
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color:
+        var(--onboarding-navy);
+
+    font-size: 12px;
+}
+
+.church-result-information small {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 3px;
+
+    color:
+        #9098a9;
+
+    font-size: 9px;
+}
+
+.location-dot {
+    color:
+        #8a82ef;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   CHURCH RESULT ARROW
+========================================================= */
+
+.church-result-arrow {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color:
+        #5146e5;
+
+    background:
+        #f1efff;
+
+    font-size: 15px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.church-result-card:hover
+.church-result-arrow {
+    transform:
+        translateX(3px);
+
+    background:
+        #e8e5ff;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.church-empty-state {
+    margin-top: 18px;
+
+    padding:
+        25px 20px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--onboarding-border);
+
+    border-radius: 14px;
+
+    background:
+        #fafbfe;
+}
+
+.empty-state-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin:
+        0 auto 10px;
+
+    border-radius: 12px;
+
+    color:
+        #858da0;
+
+    background:
+        #eef0f5;
+}
+
+.empty-state-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.church-empty-state h3 {
+    color:
+        var(--onboarding-navy);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 14px;
+}
+
+.church-empty-state p {
+    max-width: 330px;
+
+    margin:
+        6px auto 0;
+
+    color:
+        #7d8698;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+.church-empty-state p strong {
+    color:
+        #4d566b;
+}
+
+.text-button {
+    margin-top: 10px;
+
+    padding: 0;
+
+    border: 0;
+
+    color:
+        var(--onboarding-primary);
+
+    background: transparent;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.text-button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CREATE CHURCH CARD
+========================================================= */
+
+.create-church-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 15px;
+
+    padding:
+        13px 14px;
+
+    border:
+        1px solid #e5e2ff;
+
+    border-radius: 13px;
+
+    background:
+        #f7f6ff;
+}
+
+.create-church-icon {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color:
+        var(--onboarding-primary);
+
+    background:
+        #e8e5ff;
+
+    font-size: 18px;
+}
+
+.create-church-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.create-church-content strong {
+    display: block;
+
+    color:
+        #343c52;
+
+    font-size: 10px;
+}
+
+.create-church-content span {
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        #858da0;
+
+    font-size: 8px;
+}
+
+.create-church-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    color:
+        var(--onboarding-primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.create-church-link span {
+    font-size: 14px;
+}
+
+.create-church-link:hover {
+    color:
+        var(--onboarding-primary-dark);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.onboarding-mini-footer {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    color:
+        #a0a7b5;
+
+    font-size: 8px;
+}
+
+.footer-separator {
+    color:
+        #c4c8d2;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.onboarding-body button:focus-visible,
+.onboarding-body a:focus-visible,
+.onboarding-body input:focus-visible {
+    outline:
+        3px solid rgba(81,70,229,.22);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .onboarding-body *,
+    .onboarding-body *::before,
+    .onboarding-body *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .onboarding-shell {
+        grid-template-columns:
+            360px 1fr;
+    }
+
+    .brand-panel-inner {
+        padding:
+            35px;
+    }
+
+    .brand-features {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 780px) {
+
+    .onboarding-shell {
+        display: block;
+    }
+
+    .onboarding-brand-panel {
+        display: none;
+    }
+
+    .onboarding-main {
+        min-height: 100vh;
+
+        padding:
+            25px 20px 40px;
+
+        align-items: flex-start;
+    }
+
+    .onboarding-main-inner {
+        max-width: 540px;
+
+        margin:
+            0 auto;
+    }
+
+    .mobile-onboarding-brand {
+        display: flex;
+
+        justify-content: center;
+
+        margin-bottom: 40px;
+    }
+
+    .mobile-onboarding-brand
+    .onboarding-brand {
+        color:
+            var(--onboarding-navy);
+    }
+
+    .mobile-onboarding-brand
+    .onboarding-brand-mark {
+        color:
+            var(--onboarding-primary);
+    }
+
+    .onboarding-header h1 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .onboarding-main {
+        padding:
+            20px 15px 30px;
+    }
+
+    .mobile-onboarding-brand {
+        margin-bottom: 30px;
+    }
+
+    .search-card {
+        padding: 17px;
+
+        margin-top: 22px;
+    }
+
+    .onboarding-header h1 {
+        font-size: 29px;
+    }
+
+    .onboarding-header > p {
+        font-size: 12px;
+    }
+
+    .search-input-wrapper {
+        height: 56px;
+    }
+
+    .create-church-card {
+        align-items: flex-start;
+    }
+
+    .create-church-link {
+        margin-top: 2px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .onboarding-main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .search-card {
+        padding: 14px;
+    }
+
+    .onboarding-header h1 {
+        font-size: 27px;
+    }
+
+    .create-church-card {
+        flex-wrap: wrap;
+    }
+
+    .create-church-link {
+        width: 100%;
+
+        margin-left: 42px;
+    }
+
+}

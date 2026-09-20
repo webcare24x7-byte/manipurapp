@@ -1,0 +1,49 @@
+{
+  "name": "tourism",
+  "display_name": "Tourism",
+  "version": "0.3.0",
+  "phase": 3,
+  "tenant_isolated": true,
+  "business_owned": true,
+  "namespace": "App\\Modules\\Tourism",
+  "dependencies": [
+    "businesses",
+    "permissions"
+  ],
+  "routes": "routes.php",
+  "migrations": [
+    "Migrations/001_create_tourism_foundation.sql",
+    "Migrations/002_tourism_permissions.sql",
+    "Migrations/003_seed_tourism_test_stays.sql",
+    "Migrations/004_tourism_packages_guides.sql",
+    "Migrations/005_tourism_packages_guides_permissions.sql",
+    "Migrations/006_seed_tourism_packages_guides.sql",
+    "Migrations/007_tourism_experiences_events_trips_reviews.sql",
+    "Migrations/008_tourism_experiences_events_trips_reviews_permissions.sql",
+    "Migrations/009_seed_tourism_experiences_events.sql"
+  ],
+  "features": [
+    "tourism_dashboard",
+    "tourism_providers",
+    "tourism_destinations",
+    "tourism_stays",
+    "stay_room_types",
+    "location_coordinates",
+    "browser_current_location_capture",
+    "soft_delete_restore",
+    "tour_packages",
+    "package_destination_itinerary",
+    "local_guides",
+    "guide_verification",
+    "guide_pricing",
+    "tourism_experiences",
+    "tourism_events_festivals",
+    "trip_planner_data_model",
+    "tourism_reviews_moderation"
+  ],
+  "planned_next": [
+    "tourism_bookings",
+    "public_member_tourism_discovery",
+    "trip_planner_member_ui"
+  ]
+}

@@ -1,0 +1,2841 @@
+/* =========================================================
+   CHURCHOS ADMIN
+   GLOBAL APPLICATION LAYOUT
+   Premium Light SaaS Theme
+========================================================= */
+
+
+/* =========================================================
+   APPLICATION SHELL
+========================================================= */
+
+.app-layout {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: #f7f8fb;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION
+========================================================= */
+
+/*
+|--------------------------------------------------------------------------
+| SIDEBAR WIDTH
+|--------------------------------------------------------------------------
+|
+| Expanded sidebar  = 226px
+| Collapsed sidebar = 66px
+|
+| .app-main owns the horizontal offset.
+| Nothing inside .page-content should compensate for the sidebar.
+|
+*/
+
+.app-main {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 226px) !important;
+
+    min-width: 0;
+
+    min-height: 100vh;
+
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 226px !important;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    transition:
+        margin-left .2s ease,
+        width .2s ease;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+body.sidebar-collapsed .app-main {
+    width: calc(100% - 66px) !important;
+
+    margin-left: 66px !important;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+/*
+ * IMPORTANT:
+ *
+ * .app-main already starts after the sidebar.
+ *
+ * Therefore:
+ *
+ *     page-content margin-left = 0
+ *     page-content width       = 100%
+ *
+ * No sidebar offset belongs here.
+ */
+
+.app-main > .page-content {
+    position: relative;
+
+    display: block;
+
+    width: 100% !important;
+
+    max-width: none !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box;
+
+    flex: 1 1 auto;
+
+    padding-top: 62px;
+    padding-right: 24px;
+    padding-bottom: 42px;
+    padding-left: 24px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   COLLAPSED PAGE CONTENT
+========================================================= */
+
+body.sidebar-collapsed .app-main > .page-content {
+    width: 100% !important;
+
+    margin-left: 0 !important;
+
+    padding-left: 24px;
+
+    padding-right: 24px;
+}
+
+
+/* =========================================================
+   PAGE CONTENT CHILDREN
+========================================================= */
+
+.app-main > .page-content > * {
+    width: auto;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/*
+ * Module surfaces should occupy the available
+ * content width without escaping the shell.
+ */
+
+.app-main > .page-content > .card {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin: 0 0 20px;
+
+    box-sizing: border-box;
+}
+
+
+.page-header > div:first-child {
+    min-width: 0;
+
+    max-width: 100%;
+}
+
+
+.page-header h1 {
+    margin: 0;
+
+    color: #20283a;
+
+    font-family:
+        "Plus Jakarta Sans",
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+    font-weight: 750;
+
+    letter-spacing: -.45px;
+}
+
+
+.page-header p {
+    margin: 5px 0 0;
+
+    color: #8b94a5;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+
+    font-weight: 450;
+}
+
+
+/* =========================================================
+   PAGE ACTIONS
+========================================================= */
+
+.page-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e6e9ef;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 10px rgba(25, 32, 65, .025);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding:
+        14px 16px;
+
+    border-bottom:
+        1px solid #edf0f4;
+}
+
+
+.card-header h2,
+.card-header h3 {
+    margin: 0;
+
+    color: #30384b;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    letter-spacing: -.15px;
+}
+
+
+.card-header p {
+    margin: 3px 0 0;
+
+    color: #929aaa;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.card-body {
+    min-width: 0;
+
+    padding: 16px;
+}
+
+
+/* =========================================================
+   TABLE TOOLBAR
+========================================================= */
+
+.table-toolbar {
+    min-width: 0;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    padding:
+        8px 13px;
+
+    border-bottom:
+        1px solid #edf0f4;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   TABLE SEARCH
+========================================================= */
+
+.table-search {
+    width: 100%;
+
+    max-width: 300px;
+
+    height: 34px;
+
+    box-sizing: border-box;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid #dfe3ea;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    color: #30384b;
+
+    background: #f8f9fb;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 450;
+
+    transition:
+        border-color .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+.table-search::placeholder {
+    color: #a1a8b5;
+}
+
+
+.table-search:hover {
+    border-color: #d5d9e2;
+
+    background: #ffffff;
+}
+
+
+.table-search:focus {
+    border-color: #c7c2ff;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(81, 70, 229, .06);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    color: #4f586b;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+.table th {
+    height: 38px;
+
+    padding:
+        0 15px;
+
+    color: #8c95a5;
+
+    background: #fafbfc;
+
+    border-bottom:
+        1px solid #e9ecf1;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 750;
+
+    letter-spacing: .55px;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+.table td {
+    height: 52px;
+
+    padding:
+        7px 15px;
+
+    color: #4f586b;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #f0f1f4;
+
+    vertical-align: middle;
+}
+
+
+.table tbody tr {
+    transition:
+        background .12s ease;
+}
+
+
+.table tbody tr:hover td {
+    background: #fafaff;
+}
+
+
+.table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   TABLE PRIMARY CONTENT
+========================================================= */
+
+.table td strong {
+    color: #293247;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLE SECONDARY DATA
+========================================================= */
+
+.table td code,
+.table td .slug {
+    color: #8992a3;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLE ACTIONS
+========================================================= */
+
+.table-actions {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+}
+
+
+.table-actions a,
+.table-actions button,
+.table td:last-child a {
+    color: #687286;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color .15s ease;
+}
+
+
+.table-actions a:hover,
+.table-actions button:hover,
+.table td:last-child a:hover {
+    color: #5146e5;
+}
+
+
+/* =========================================================
+   LINK BUTTON
+========================================================= */
+
+.link-button {
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    color: #8e6873;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color .15s ease;
+}
+
+
+.link-button:hover {
+    color: #c03955;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge {
+    min-height: 23px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding:
+        0 8px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: .15px;
+}
+
+
+.badge-success {
+    color: #287a55;
+
+    background: #eaf7f0;
+
+    border:
+        1px solid #d8f0e3;
+}
+
+
+.badge-danger {
+    color: #b64b5e;
+
+    background: #fff0f2;
+
+    border:
+        1px solid #f7dce1;
+}
+
+
+.badge-warning {
+    color: #9a6815;
+
+    background: #fff8e7;
+
+    border:
+        1px solid #f4e5bc;
+}
+
+
+.badge-info {
+    color: #49698f;
+
+    background: #eef5fc;
+
+    border:
+        1px solid #dce9f7;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    min-height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid #dfe3ea;
+
+    border-radius: 7px;
+
+    color: #394255;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    line-height: 1;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform .12s ease,
+        color .15s ease,
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+
+.btn:hover {
+    border-color: #d3d7df;
+
+    background: #f8f9fb;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.btn:active {
+    transform:
+        translateY(0);
+}
+
+
+.btn-primary {
+    border-color: #5146e5;
+
+    color: #ffffff;
+
+    background: #5146e5;
+
+    box-shadow:
+        0 2px 6px rgba(81, 70, 229, .12);
+}
+
+
+.btn-primary:hover {
+    border-color: #473bc9;
+
+    color: #ffffff;
+
+    background: #473bc9;
+
+    box-shadow:
+        0 4px 12px rgba(81, 70, 229, .17);
+}
+
+
+.btn-danger {
+    border-color: #dc5b6b;
+
+    color: #ffffff;
+
+    background: #dc5b6b;
+}
+
+
+.btn-danger:hover {
+    border-color: #c94d5d;
+
+    color: #ffffff;
+
+    background: #c94d5d;
+}
+
+
+.btn-sm {
+    min-height: 30px;
+
+    padding:
+        0 11px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        16px 20px;
+
+    min-width: 0;
+}
+
+
+.form-grid > .form-group {
+    min-width: 0;
+}
+
+
+.form-group {
+    margin: 0;
+
+    min-width: 0;
+}
+
+
+.form-group > label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #4a5366;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    font-weight: 650;
+}
+
+
+.form-group small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #929aaa;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid #dfe3ea;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    color: #30384b;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 450;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+
+.form-group input,
+.form-group select {
+    height: 36px;
+
+    padding:
+        0 11px;
+}
+
+
+.form-group textarea {
+    min-height: 100px;
+
+    padding:
+        9px 11px;
+
+    line-height: 1.45;
+
+    resize: vertical;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a2a9b6;
+}
+
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color:
+        #d3d7df;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color:
+        #c7c2ff;
+
+    box-shadow:
+        0 0 0 3px rgba(81, 70, 229, .06);
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    padding:
+        50px 20px;
+
+    text-align: center;
+}
+
+
+.empty-state h3 {
+    margin: 0 0 6px;
+
+    color: #374055;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    letter-spacing: -.15px;
+}
+
+
+.empty-state p {
+    margin: 0;
+
+    color: #9aa2b0;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.table-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-top: 14px;
+
+    color: #8f97a7;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DETAIL TABLE
+========================================================= */
+
+.table-details {
+    width: 100%;
+
+    max-width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.table-details th,
+.table-details td {
+    padding:
+        11px 14px;
+
+    border-bottom:
+        1px solid #eef0f4;
+
+    text-align: left;
+
+    vertical-align: middle;
+}
+
+
+.table-details th {
+    width: 180px;
+
+    color: #7d8697;
+
+    background: #fafbfc;
+
+    font-size: 10px;
+
+    font-weight: 650;
+}
+
+
+.table-details td {
+    color: #3f485b;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.alert {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    padding:
+        11px 14px;
+
+    margin-bottom: 16px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+.alert-success {
+    color: #17633f;
+
+    background: #eefaf4;
+
+    border:
+        1px solid #d5efdf;
+}
+
+
+.alert-error {
+    color: #a43f4f;
+
+    background: #fff1f3;
+
+    border:
+        1px solid #f4d9df;
+}
+
+
+.alert-warning {
+    color: #8a6117;
+
+    background: #fff9ea;
+
+    border:
+        1px solid #f1e3be;
+}
+
+
+.alert-info {
+    color: #365f8c;
+
+    background: #f0f6fc;
+
+    border:
+        1px solid #dce9f6;
+}
+
+
+/* =========================================================
+   FLASH
+========================================================= */
+
+.flash {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    padding:
+        11px 14px;
+
+    margin-bottom: 14px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    animation:
+        flashIn .25s ease;
+}
+
+
+.flash-icon {
+    flex:
+        0 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+.flash-message {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.flash-close {
+    flex:
+        0 0 auto;
+
+    width: 24px;
+
+    height: 24px;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    color: inherit;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: .55;
+
+    transition:
+        opacity .15s ease,
+        background .15s ease;
+}
+
+
+.flash-close:hover {
+    opacity: 1;
+
+    background:
+        rgba(0, 0, 0, .04);
+}
+
+
+.flash-success {
+    color: #17633f;
+
+    background: #eefaf4;
+
+    border-color: #d5efdf;
+}
+
+
+.flash-error {
+    color: #a43f4f;
+
+    background: #fff1f3;
+
+    border-color: #f4d9df;
+}
+
+
+.flash-warning {
+    color: #8a6117;
+
+    background: #fff8e8;
+
+    border-color: #f1e1b9;
+}
+
+
+.flash-info {
+    color: #365f8c;
+
+    background: #f0f6fc;
+
+    border-color: #dce9f6;
+}
+
+
+@keyframes flashIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.btn:focus-visible,
+.table-search:focus-visible,
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible,
+.link-button:focus-visible {
+    outline:
+        2px solid rgba(81, 70, 229, .35);
+
+    outline-offset:
+        2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .app-main {
+        width: calc(100% - 226px) !important;
+    }
+
+
+    body.sidebar-collapsed .app-main {
+        width: calc(100% - 66px) !important;
+    }
+
+
+    .app-main > .page-content {
+        padding-right: 20px;
+
+        padding-left: 20px;
+    }
+
+
+    .page-header {
+        margin-bottom: 18px;
+    }
+
+
+    .form-grid {
+        gap:
+            14px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .page-header h1 {
+        font-size: 19px;
+    }
+
+
+    .table-toolbar {
+        overflow-x: auto;
+    }
+
+
+    .form-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .table-details th {
+        width: 150px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .app-main,
+    body.sidebar-collapsed .app-main {
+        width: 100% !important;
+
+        margin-left: 0 !important;
+    }
+
+
+    .app-main > .page-content,
+    body.sidebar-collapsed .app-main > .page-content {
+        width: 100% !important;
+
+        padding-top: 58px;
+
+        padding-right: 12px;
+
+        padding-bottom: 40px;
+
+        padding-left: 12px;
+
+        overflow-x: hidden;
+    }
+
+
+    .page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .page-header h1 {
+        font-size: 18px;
+    }
+
+
+    .page-header p {
+        font-size: 11px;
+    }
+
+
+    .page-actions {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    .card {
+        border-radius: 9px;
+    }
+
+
+    .card-header {
+        padding:
+            13px 14px;
+    }
+
+
+    .card-body {
+        padding: 14px;
+    }
+
+
+    .table-toolbar {
+        min-width: 0;
+
+        padding:
+            8px 10px;
+    }
+
+
+    .table-search {
+        max-width: none;
+    }
+
+
+    .table {
+        min-width: 620px;
+    }
+
+
+    .table th {
+        padding:
+            0 12px;
+    }
+
+
+    .table td {
+        padding:
+            7px 12px;
+    }
+
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+
+    .table-details {
+        min-width: 500px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .app-main > .page-content,
+    body.sidebar-collapsed .app-main > .page-content {
+        padding-right: 10px;
+
+        padding-bottom: 38px;
+
+        padding-left: 10px;
+    }
+
+
+    .page-header h1 {
+        font-size: 17px;
+    }
+
+
+    .page-header p {
+        font-size: 10px;
+    }
+
+
+    .btn {
+        min-height: 33px;
+
+        padding:
+            0 12px;
+
+        font-size: 10px;
+    }
+
+
+    .empty-state {
+        padding:
+            42px 15px;
+    }
+
+}
+
+/* =========================================================
+   TABLE ACTION GROUPS
+========================================================= */
+
+.table td:last-child {
+    white-space: nowrap;
+}
+
+
+/*
+ * Staff already uses .table-actions.
+ */
+
+.table-actions {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    flex-wrap: nowrap;
+
+    gap: 6px;
+
+    white-space: nowrap;
+}
+
+
+/*
+ * Ministries and Committees don't use .table-actions.
+ * Keep their inline actions on one line as well.
+ */
+
+.table td:last-child > .btn,
+.table td:last-child > form {
+    display: inline-flex;
+
+    flex:
+        0 0 auto;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+
+.table td:last-child > form {
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.table td:last-child > form > .btn {
+    display: inline-flex;
+
+    flex:
+        0 0 auto;
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+========================================================= */
+
+.table td:last-child .btn,
+.table-actions .btn {
+    min-width: 0;
+
+    min-height: 32px;
+
+    padding:
+        0 12px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VIEW
+========================================================= */
+
+.table td:last-child .btn-outline,
+.table-actions .btn-outline {
+    color: #596479;
+
+    background: #ffffff;
+
+    border-color: #cfd5df;
+}
+
+
+.table td:last-child .btn-outline:hover,
+.table-actions .btn-outline:hover {
+    color: #5146e5;
+
+    background: #f5f4ff;
+
+    border-color: #bdb8ff;
+}
+
+
+/* =========================================================
+   EDIT / PRIMARY
+========================================================= */
+
+.table td:last-child .btn-primary,
+.table-actions .btn-primary {
+    color: #ffffff;
+
+    background: #5146e5;
+
+    border-color: #5146e5;
+}
+
+
+.table td:last-child .btn-primary:hover,
+.table-actions .btn-primary:hover {
+    color: #ffffff;
+
+    background: #4539c9;
+
+    border-color: #4539c9;
+}
+
+
+/* =========================================================
+   DELETE / DANGER
+========================================================= */
+
+.table td:last-child .btn-danger,
+.table-actions .btn-danger {
+    color: #ffffff;
+
+    background: #df5b6c;
+
+    border-color: #df5b6c;
+}
+
+
+.table td:last-child .btn-danger:hover,
+.table-actions .btn-danger:hover {
+    color: #ffffff;
+
+    background: #c94759;
+
+    border-color: #c94759;
+}
+
+/* =========================================================
+   STAFF / .TABLE-ACTIONS FINAL OVERRIDE
+   Must remain at the very end of layout.css
+========================================================= */
+
+.table td:last-child .table-actions {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: nowrap;
+
+    gap: 5px;
+
+    width: auto;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    vertical-align: middle;
+}
+
+
+/* -----------------------------------------
+   All action buttons
+----------------------------------------- */
+
+.table td:last-child .table-actions .btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex:
+        0 0 auto;
+
+    width: auto;
+    min-width: 0;
+
+    height: 30px;
+    min-height: 30px;
+
+    margin: 0;
+    padding:
+        0 10px;
+
+    border-radius: 7px;
+
+    box-sizing: border-box;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transform: none;
+}
+
+
+/* -----------------------------------------
+   VIEW
+----------------------------------------- */
+
+.table td:last-child .table-actions .btn.btn-outline {
+    min-width: 48px;
+
+    color: #596479;
+
+    background: #ffffff;
+
+    border:
+        1px solid #d1d7e1;
+
+    box-shadow: none;
+}
+
+
+.table td:last-child .table-actions .btn.btn-outline:hover {
+    color: #5146e5;
+
+    background: #f5f4ff;
+
+    border-color: #bbb5ff;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* -----------------------------------------
+   EDIT
+----------------------------------------- */
+
+.table td:last-child .table-actions .btn.btn-primary {
+    min-width: 46px;
+
+    color: #ffffff;
+
+    background: #5146e5;
+
+    border-color: #5146e5;
+
+    box-shadow:
+        0 2px 5px rgba(81, 70, 229, .12);
+}
+
+
+.table td:last-child .table-actions .btn.btn-primary:hover {
+    color: #ffffff;
+
+    background: #4539c9;
+
+    border-color: #4539c9;
+
+    box-shadow:
+        0 3px 8px rgba(81, 70, 229, .16);
+
+    transform: none;
+}
+
+
+/* -----------------------------------------
+   DEACTIVATE / DELETE
+----------------------------------------- */
+
+.table td:last-child .table-actions .btn.btn-danger {
+    min-width: 72px;
+
+    color: #ffffff;
+
+    background: #df5b6c;
+
+    border-color: #df5b6c;
+
+    box-shadow: none;
+}
+
+
+.table td:last-child .table-actions .btn.btn-danger:hover {
+    color: #ffffff;
+
+    background: #c94759;
+
+    border-color: #c94759;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   CHURCHOS
+   STRUCTURE MODULE ACTIONS
+
+   Used by:
+   - Position Categories
+   - Positions
+   - Leadership Appointments
+
+   IMPORTANT:
+   This stylesheet is NOT global.
+   Load only on the three modules above.
+========================================================= */
+
+
+/* =========================================================
+   ACTION CELL
+========================================================= */
+
+.table td:last-child {
+    white-space: nowrap;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   VIEW / EDIT LINKS
+========================================================= */
+
+.table td:last-child > a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 30px;
+
+    min-width: 48px;
+
+    box-sizing: border-box;
+
+    margin: 0 2px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid #d5dbe5;
+
+    border-radius: 7px;
+
+    color: #596479;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    transition:
+        color .15s ease,
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* =========================================================
+   VIEW HOVER
+========================================================= */
+
+.table td:last-child > a:first-child:hover {
+    color: #5146e5;
+
+    background: #f5f4ff;
+
+    border-color: #bdb8ff;
+
+    box-shadow:
+        0 2px 5px rgba(81, 70, 229, .06);
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.table td:last-child > a:nth-of-type(2) {
+    color: #ffffff;
+
+    background: #5146e5;
+
+    border-color: #5146e5;
+
+    box-shadow:
+        0 2px 5px rgba(81, 70, 229, .10);
+}
+
+
+.table td:last-child > a:nth-of-type(2):hover {
+    color: #ffffff;
+
+    background: #4539c9;
+
+    border-color: #4539c9;
+
+    box-shadow:
+        0 3px 8px rgba(81, 70, 229, .15);
+}
+
+
+/* =========================================================
+   DELETE FORM
+========================================================= */
+
+.table td:last-child > form {
+    display: inline-flex !important;
+
+    align-items: center;
+
+    margin: 0 0 0 2px;
+
+    padding: 0;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.table td:last-child > form .link-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 30px;
+
+    min-width: 54px;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid #df5b6c;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    background: #df5b6c;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        color .15s ease,
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+
+/* =========================================================
+   DELETE HOVER
+========================================================= */
+
+.table td:last-child > form .link-button:hover {
+    color: #ffffff;
+
+    background: #c94759;
+
+    border-color: #c94759;
+
+    box-shadow:
+        0 3px 8px rgba(201, 71, 89, .14);
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   ACTION SEPARATORS
+========================================================= */
+
+/*
+ * The existing markup contains literal:
+ *
+ * View
+ * |
+ * Edit
+ * |
+ * Delete
+ *
+ * Hide those textual separators visually without
+ * changing the HTML.
+ */
+
+.table:not(.table-details) td:last-child {
+    font-size: 0;
+}
+
+
+.table td:last-child > a,
+.table td:last-child > form {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.table td:last-child > a:focus-visible,
+.table td:last-child > form .link-button:focus-visible {
+    outline:
+        2px solid rgba(81, 70, 229, .30);
+
+    outline-offset:
+        2px;
+}
+
+
+/* =========================================================
+   SMALL SCREENS
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .table td:last-child > a,
+    .table td:last-child > form .link-button {
+        height: 29px;
+
+        min-width: 44px;
+
+        padding:
+            0 8px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   CHURCHOS
+   MEMBERS INDEX — TABLE ACTIONS
+========================================================= */
+
+
+/* =========================================================
+   ACTION GROUP
+========================================================= */
+
+.table td:last-child .table-actions {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: nowrap;
+
+    gap: 5px;
+
+    width: auto;
+
+    margin: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   ALL MEMBER ACTION BUTTONS
+========================================================= */
+
+.table td:last-child .table-actions .btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex:
+        0 0 auto;
+
+    width: auto;
+
+    height: 30px;
+    min-height: 30px;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding:
+        0 10px;
+
+    box-sizing: border-box;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition:
+        color .15s ease,
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease,
+        transform .12s ease;
+}
+
+
+/* =========================================================
+   VIEW
+========================================================= */
+
+.table td:last-child .table-actions > a:first-child {
+    min-width: 48px;
+
+    color: #596479;
+
+    background: #ffffff;
+
+    border:
+        1px solid #d1d7e1;
+
+    box-shadow: none;
+}
+
+
+.table td:last-child .table-actions > a:first-child:hover {
+    color: #5146e5;
+
+    background: #f5f4ff;
+
+    border-color: #bbb5ff;
+
+    box-shadow:
+        0 2px 5px rgba(81, 70, 229, .06);
+
+    transform: none;
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.table td:last-child .table-actions > a:nth-of-type(2) {
+    min-width: 46px;
+
+    color: #ffffff;
+
+    background: #5146e5;
+
+    border:
+        1px solid #5146e5;
+
+    box-shadow:
+        0 2px 5px rgba(81, 70, 229, .10);
+}
+
+
+.table td:last-child .table-actions > a:nth-of-type(2):hover {
+    color: #ffffff;
+
+    background: #4539c9;
+
+    border-color: #4539c9;
+
+    box-shadow:
+        0 3px 8px rgba(81, 70, 229, .15);
+
+    transform: none;
+}
+
+
+/* =========================================================
+   ARCHIVE
+========================================================= */
+
+.table td:last-child .table-actions > form {
+    display: inline-flex;
+
+    align-items: center;
+
+    flex:
+        0 0 auto;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.table td:last-child .table-actions > form .btn-warning {
+    min-width: 58px;
+
+    color: #8a6417;
+
+    background: #fff8e7;
+
+    border:
+        1px solid #ead9ad;
+
+    box-shadow: none;
+}
+
+
+.table td:last-child .table-actions > form .btn-warning:hover {
+    color: #ffffff;
+
+    background: #c9952e;
+
+    border-color: #c9952e;
+
+    box-shadow:
+        0 3px 8px rgba(201, 149, 46, .14);
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.table td:last-child .table-actions .btn:focus-visible {
+    outline:
+        2px solid rgba(81, 70, 229, .30);
+
+    outline-offset:
+        2px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .table td:last-child .table-actions .btn {
+        height: 29px;
+
+        min-height: 29px;
+
+        padding:
+            0 8px;
+
+        font-size: 9px;
+    }
+
+
+    .table td:last-child .table-actions > a:first-child {
+        min-width: 44px;
+    }
+
+
+    .table td:last-child .table-actions > a:nth-of-type(2) {
+        min-width: 44px;
+    }
+
+
+    .table td:last-child .table-actions > form .btn-warning {
+        min-width: 52px;
+    }
+
+}
+
+/* =========================================================
+   CHURCHOS
+   GLOBAL FOOTER
+========================================================= */
+
+.footer {
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding:
+        24px 30px;
+
+    background: #ffffff;
+
+    border-top:
+        1px solid #e8ebf1;
+
+    color: #7d8697;
+
+    box-shadow:
+        0 -2px 8px rgba(25, 32, 65, .02);
+}
+
+
+/* =========================================================
+   FOOTER INNER
+========================================================= */
+
+.footer-inner {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+    min-width: 0;
+}
+
+
+.footer-brand-name {
+    margin: 0 0 4px;
+
+    color: #30384b;
+
+    font-family:
+        "Plus Jakarta Sans",
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    letter-spacing: -.15px;
+}
+
+
+.footer-copyright {
+    color: #9aa2b0;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    font-weight: 450;
+}
+
+
+/* =========================================================
+   FOOTER SUPPORT
+========================================================= */
+
+.footer-support {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.footer-support-label {
+    color: #9aa2b0;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+
+.footer-support-phone {
+    color: #5146e5;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        color .15s ease;
+}
+
+
+.footer-support-phone:hover {
+    color: #4539c9;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   LIVE SUPPORT BUBBLE
+========================================================= */
+
+.live-support {
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    z-index: 9999;
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid #5146e5;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background: #5146e5;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 16px rgba(81, 70, 229, .22);
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
+}
+
+
+.live-support:hover {
+    color: #ffffff;
+
+    background: #4539c9;
+
+    border-color: #4539c9;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(81, 70, 229, .28);
+}
+
+
+.live-support:active {
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   SUPPORT ICON
+========================================================= */
+
+.live-support svg {
+    width: 21px;
+
+    height: 21px;
+
+    display: block;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   SUPPORT TOOLTIP
+========================================================= */
+
+.live-support::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+
+    right: calc(100% + 10px);
+
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        translateX(4px);
+
+    width: max-content;
+
+    max-width: 240px;
+
+    padding:
+        8px 11px;
+
+    border:
+        1px solid #e3e6ed;
+
+    border-radius: 7px;
+
+    color: #3d4658;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 5px 18px rgba(25, 32, 65, .10);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .15s ease,
+        transform .15s ease,
+        visibility .15s ease;
+}
+
+
+.live-support:hover::after,
+.live-support:focus-visible::after {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(0);
+}
+
+
+/* =========================================================
+   SUPPORT FOCUS
+========================================================= */
+
+.live-support:focus-visible {
+    outline:
+        2px solid rgba(81, 70, 229, .30);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding:
+            20px 16px;
+    }
+
+
+    .footer-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .footer-support {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .live-support {
+        right: 16px;
+
+        bottom: 16px;
+
+        width: 46px;
+
+        height: 46px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .footer {
+        padding:
+            18px 12px;
+    }
+
+
+    .footer-brand-name {
+        font-size: 11px;
+    }
+
+
+    .footer-copyright,
+    .footer-support-label,
+    .footer-support-phone {
+        font-size: 9px;
+    }
+
+
+    .live-support {
+        right: 14px;
+
+        bottom: 14px;
+
+        width: 44px;
+
+        height: 44px;
+    }
+
+
+    .live-support svg {
+        width: 19px;
+
+        height: 19px;
+    }
+
+}
+
+/* =========================================================
+   FOOTER / LIVE SUPPORT POSITION FIX
+========================================================= */
+
+.footer-support {
+    padding-right: 72px;
+}
+
+
+/* Keep the bubble clear of footer content */
+
+.live-support {
+    right: 24px;
+    bottom: 82px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .footer-support {
+        padding-right: 0;
+    }
+
+    .live-support {
+        right: 16px;
+        bottom: 72px;
+    }
+
+}
+
+/* =========================================================
+   SIDEBAR LOGOUT
+========================================================= */
+
+.sidebar a[href*="logout"] {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    padding: 0 9px;
+
+    border: 1px solid #e5e8ee;
+
+    border-radius: 6px;
+
+    color: #737d8f;
+
+    background: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition:
+        color .15s ease,
+        background .15s ease,
+        border-color .15s ease;
+}
+
+
+.sidebar a[href*="logout"]:hover {
+    color: #c44d5d;
+
+    background: #fff5f6;
+
+    border-color: #f0cdd2;
+}

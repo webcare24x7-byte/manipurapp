@@ -1,0 +1,15 @@
+START TRANSACTION;
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'View Fresh Food Module','fresh_food.view' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.view');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'View Fresh Food Businesses','fresh_food.businesses.view' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.businesses.view');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Create Fresh Food Businesses','fresh_food.businesses.create' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.businesses.create');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Edit Fresh Food Businesses','fresh_food.businesses.edit' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.businesses.edit');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Delete Fresh Food Businesses','fresh_food.businesses.delete' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.businesses.delete');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'View Fresh Food Categories','fresh_food.categories.view' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.categories.view');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Create Fresh Food Categories','fresh_food.categories.create' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.categories.create');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Edit Fresh Food Categories','fresh_food.categories.edit' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.categories.edit');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Delete Fresh Food Categories','fresh_food.categories.delete' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.categories.delete');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'View Fresh Food Products','fresh_food.products.view' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.products.view');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Create Fresh Food Products','fresh_food.products.create' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.products.create');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Edit Fresh Food Products','fresh_food.products.edit' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.products.edit');
+INSERT INTO permissions (uuid,name,slug) SELECT UUID(),'Delete Fresh Food Products','fresh_food.products.delete' WHERE NOT EXISTS (SELECT 1 FROM permissions WHERE slug='fresh_food.products.delete');
+COMMIT;

@@ -1,0 +1,1 @@
+<div class="page-header"><h1>Add Event / Festival</h1></div><?php if(!empty($error)): ?><div class="alert alert-danger"><?=htmlspecialchars($error)?></div><?php endif; ?><form method="post" action="<?=config('app.base_path')?>/tourism/events"><?php include __DIR__.'/form.php'; ?><div class="page-actions"><button class="btn btn-primary">Save Event</button></div></form>

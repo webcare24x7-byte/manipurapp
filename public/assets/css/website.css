@@ -1,0 +1,428 @@
+
+/* ===========================================
+   ChurchOS Website Styles
+   Landing Page + Authentication
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,Helvetica,sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+    line-height:1.6;
+}
+
+a{text-decoration:none;}
+img{max-width:100%;}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* Header */
+
+header{
+    background:#ffffff;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:75px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#334155;
+    font-weight:500;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:8px;
+    transition:.2s;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:#ffffff;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+}
+
+.btn-outline{
+    border:1px solid #2563eb;
+    color:#2563eb;
+}
+
+.btn-outline:hover{
+    background:#2563eb;
+    color:#ffffff;
+}
+
+/* Hero */
+
+.hero{padding:90px 0;}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:20px;
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.hero-note{color:#64748b;}
+
+.screenshot{
+    background:white;
+    border-radius:14px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#94a3b8;
+    font-size:20px;
+}
+
+/* Sections */
+
+.section{padding:80px 0;}
+
+.section-title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:50px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.card h3{margin:20px 0 15px;}
+
+.icon{font-size:40px;}
+
+.why{background:white;}
+
+.check{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:40px;
+}
+
+/* Testimonials */
+
+.testimonials{background:#f1f5f9;}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:50px;
+}
+
+.testimonial{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+    border-top:4px solid #2563eb;
+}
+
+.testimonial p{
+    color:#475569;
+    margin-bottom:20px;
+    line-height:1.7;
+}
+
+.testimonial h4{margin-bottom:5px;}
+
+.testimonial span{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* Church Types */
+
+.church-types{background:#ffffff;}
+
+.church-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.church-card{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+    padding:35px;
+    transition:.25s;
+}
+
+.church-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.church-card .icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.church-card h3{
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+.church-card p{
+    color:#64748b;
+    line-height:1.8;
+}
+
+/* CTA */
+
+.cta{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.cta h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    margin-bottom:35px;
+    opacity:.9;
+}
+
+/* Footer */
+
+footer{
+    background:#0f172a;
+    color:white;
+    padding:40px 0;
+    text-align:center;
+}
+
+/* Authentication */
+
+.auth-body{
+    background:#f1f5f9;
+    min-height:100vh;
+}
+
+.auth-container{
+    display:grid;
+    grid-template-columns:1fr 520px;
+    min-height:100vh;
+}
+
+.auth-left{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    padding:70px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.brand-logo{
+    color:white;
+    font-size:34px;
+    font-weight:700;
+}
+
+.auth-brand h1{
+    font-size:52px;
+    margin-top:35px;
+    margin-bottom:25px;
+    line-height:1.2;
+}
+
+.auth-brand p{
+    font-size:20px;
+    opacity:.95;
+    max-width:560px;
+}
+
+.feature-list{margin-top:60px;}
+.feature-item{font-size:19px;margin-bottom:18px;}
+.auth-footer{font-size:15px;opacity:.9;}
+
+.auth-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+    background:#f8fafc;
+}
+
+.auth-card{
+    width:100%;
+    max-width:420px;
+    background:white;
+    border-radius:18px;
+    padding:45px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.auth-card h2{
+    margin-bottom:10px;
+    color:#0f172a;
+}
+
+.auth-card p{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.auth-card label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.auth-card input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #dbe3ee;
+    border-radius:12px;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+.auth-card input:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+.auth-card button{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.auth-card button:hover{
+    background:#1d4ed8;
+}
+
+.auth-link{
+    text-align:center;
+    margin-top:25px;
+}
+
+.auth-link a{
+    color:#2563eb;
+    font-weight:600;
+}
+
+.error-box{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+/* Responsive */
+
+@media(max-width:960px){
+
+    .auth-container{grid-template-columns:1fr;}
+    .auth-left{display:none;}
+    .auth-right{padding:30px;}
+
+    .hero-grid,
+    .feature-grid,
+    .testimonial-grid,
+    .church-grid,
+    .check{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+}

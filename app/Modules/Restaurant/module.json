@@ -1,0 +1,45 @@
+{
+  "name": "restaurant",
+  "display_name": "Restaurant Food Ordering",
+  "version": "0.7.0",
+  "phase": 3,
+  "tenant_isolated": true,
+  "business_owned": true,
+  "namespace": "App\\Modules\\Restaurant",
+  "dependencies": [
+    "businesses",
+    "permissions"
+  ],
+  "routes": "routes.php",
+  "migrations": [
+    "Migrations/001_create_restaurant_foundation.sql",
+    "Migrations/002_restaurant_permissions.sql",
+    "Migrations/003_create_restaurant_orders.sql",
+    "Migrations/004_restaurant_discounts_coupons.sql",
+    "Migrations/005_restaurant_order_status_history.sql",
+    "Migrations/006_restaurant_location_coordinates.sql"
+  ],
+  "excludes": [
+    "taxi",
+    "fresh_food",
+    "payments",
+    "delivery_dispatch"
+  ],
+  "features": [
+    "unified_menu_management",
+    "category_item_variant_management_view",
+    "reusable_modifier_group_management_view",
+    "quick_item_availability",
+    "quick_variant_availability",
+    "soft_delete_restore_for_menu_entities",
+    "restaurant_business_details",
+    "operating_hours",
+    "restaurant_order_lifecycle",
+    "restaurant_order_admin",
+    "test_customer_order_flow",
+    "order_snapshot_items",
+    "order_snapshot_modifiers",
+    "restaurant_location_coordinates",
+    "browser_current_location_capture"
+  ]
+}

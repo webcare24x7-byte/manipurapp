@@ -1,0 +1,26 @@
+# Local configuration
+.env
+.env.*
+!.env.example
+config/database.local.php
+
+# Installer state
+storage/install.lock
+storage/logs/
+storage/cache/
+
+# Local/generated uploads (keep explicitly committed demo assets only)
+# public/uploads/*
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# PHP/runtime
+*.log
+
+# Generated local database configuration
+config/database.php
+app/Modules/Taxi/Config/gemini.local.php

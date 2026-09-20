@@ -1,0 +1,95 @@
+/* =====================================================
+   ChurchOS Design System
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#2563EB;
+    --primary-hover:#1D4ED8;
+
+    --sidebar:#0F172A;
+    --sidebar-hover:#1E293B;
+
+    --background:#F8FAFC;
+
+    --surface:#FFFFFF;
+
+    --border:#E2E8F0;
+
+    --text:#0F172A;
+
+    --muted:#64748B;
+
+    --success:#22C55E;
+
+    --danger:#EF4444;
+
+    --radius:16px;
+
+    --shadow:
+        0 12px 30px rgba(15,23,42,.08);
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+
+        Inter,
+
+        "Segoe UI",
+
+        Arial,
+
+        sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.6;
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+}
+
+img{
+
+    max-width:100%;
+}
+
+button{
+
+    cursor:pointer;
+
+    font:inherit;
+}
+
+input{
+
+    font:inherit;
+}
+
+.container{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+}

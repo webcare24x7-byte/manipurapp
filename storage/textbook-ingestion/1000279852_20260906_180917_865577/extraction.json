@@ -1,0 +1,807 @@
+{
+    "schema_version": "1.0.0",
+    "source": {
+        "source_type": "textbook",
+        "board_code": "BOSEM",
+        "board_name": "Board of Secondary Education, Manipur",
+        "class_name": "Class IX",
+        "subject_name": "Mathematics",
+        "chapter_number": 4,
+        "chapter_title": "Linear Equations in Two Variables"
+    },
+    "chapter": {
+        "number": 4,
+        "title": "Linear Equations in Two Variables"
+    },
+    "pages": [
+        {
+            "page_number": 70,
+            "pdf_page_number": 1,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "You have studied linear equations in one variable in the previous classes. Recall that a linear equation in one variable is an equation involving only linear polynomials in one variable. Thus, equations of the form ax = b, ax + b = c, ax + b = cx + d (where a != 0, b, c, d are constants) are linear equations in one variable. For example, x + 2 = 0, 2x - sqrt(3) = 0, 5x + 3 = 3x - 5, y/3 - 3 = y/3 + 3 etc. are linear equations in one variable. You also know that such equations have a unique (i.e. one and only one) solution. Now, let us see some examples of solving linear equations in one variable (i.e. finding the value of the variable satisfying the equation)."
+                }
+            ],
+            "concepts": [
+                {
+                    "title": "Linear Equation in One Variable",
+                    "type": "concept",
+                    "canonical_text": "An equation involving only linear polynomials in one variable. Equations of the form ax = b, ax + b = c, ax + b = cx + d (where a != 0, b, c, d are constants) are linear equations in one variable.",
+                    "related_terms": [
+                        "linear polynomial",
+                        "unique solution",
+                        "transposition"
+                    ],
+                    "summary": "An algebraic equation where the highest exponent of the variable is 1, containing only one variable, and having a unique solution."
+                }
+            ],
+            "definitions": [
+                {
+                    "term": "Linear Equation in One Variable",
+                    "definition": "An equation involving only linear polynomials in one variable."
+                }
+            ],
+            "equations": [
+                {
+                    "expression": "ax = b",
+                    "latex": "ax = b",
+                    "type": "linear_equation_one_variable"
+                },
+                {
+                    "expression": "ax + b = c",
+                    "latex": "ax + b = c",
+                    "type": "linear_equation_one_variable"
+                },
+                {
+                    "expression": "ax + b = cx + d",
+                    "latex": "ax + b = cx + d",
+                    "type": "linear_equation_one_variable"
+                }
+            ],
+            "worked_examples": [
+                {
+                    "example_number": "Example 1",
+                    "problem": "Solve 4x + 3 = 15",
+                    "steps": [
+                        "4x + 3 = 15",
+                        "or 4x = 15 - 3 (by transposition)",
+                        "or 4x = 12",
+                        "therefore x = 12 / 4 = 3"
+                    ],
+                    "final_answer": "x = 3"
+                },
+                {
+                    "example_number": "Example 2",
+                    "problem": "Solve 4x + 3 = 2x + 5",
+                    "steps": [
+                        "4x + 3 = 2x + 5",
+                        "or 4x - 2x = 5 - 3 (by transposition)",
+                        "or 2x = 2",
+                        "therefore x = 1"
+                    ],
+                    "final_answer": "x = 1"
+                },
+                {
+                    "example_number": "Example 3",
+                    "problem": "Solve y / 3 + 1 = y / 4 - 2",
+                    "steps": [
+                        "y / 3 + 1 = y / 4 - 2",
+                        "or y / 3 - y / 4 = -2 - 1 (by transposition)",
+                        "or y / 12 = -3",
+                        "therefore y = -3 * 12 = -36"
+                    ],
+                    "final_answer": "y = -36"
+                }
+            ],
+            "figures": [],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [],
+            "headings": [
+                "CHAPTER 4",
+                "LINEAR EQUATIONS IN TWO VARIABLES",
+                "4.1 Introduction"
+            ]
+        },
+        {
+            "page_number": 71,
+            "pdf_page_number": 2,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Let us now consider the statement 'The sum of two numbers is 10'. If we denote the first number by x and the second number by y, then the statement can be expressed as 'x + y = 10'. This is a linear equation in two variables (x and y). Likewise 3x + y = -5, 2u - v = 4, -4x + 3y = 9, x/3 + y/4 = 1 etc. are all linear equations in two variables. Thus, a linear polynomial in two variables equated to zero gives a linear equation in two variables. It is also called a first degree equation in two variables."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The general form of a linear equation in two variables is ax + by + c = 0, where a, b, c are constants and a, b are both non-zeroes."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If either a = 0 or b = 0, the equation ax + by + c = 0 is no more a linear equation in two variables in its most general form. But in some special circumstances, either a or b is granted to be zero. For example, the equation 3x + 2 = 0 can be written in the general form as 3x + 0.y + 2 = 0."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You have already known that every linear equation in one variable has a unique solution. What can you say about the solution of a linear equation in two variables? If the two variables be x and y, then a pair of values, one for x and one for y which satisfy the equation is called a solution of the equation."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "This solution is written as an ordered pair (3, 1). In such an ordered pair the first component invariably represents a value of x and the second, the corresponding value of y. Similarly, the ordered pair (2, 4) is also a solution of the equation 3x + y = 10. But (2, 5) is not a solution of this equation, because on putting x = 2 and y = 5, we get 3x + y = 6 + 5 = 11 != 10."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You have already seen two solutions of the equation 3x + y = 10 viz. (3, 1) and (2, 4). You can also verify that (0, 10) is also another solution of the equation. In fact, we can get many solutions of the equation by assigning different values to x (or y) in the equation and finding the corresponding value of the other."
+                }
+            ],
+            "concepts": [
+                {
+                    "title": "Linear Equation in Two Variables",
+                    "type": "concept",
+                    "canonical_text": "A linear polynomial in two variables equated to zero gives a linear equation in two variables. It is also called a first degree equation in two variables.",
+                    "related_terms": [
+                        "first degree equation",
+                        "constants",
+                        "general form"
+                    ],
+                    "summary": "An equation that can be written in the form ax + by + c = 0, where a, b and c are real numbers, and a and b are not both zero."
+                },
+                {
+                    "title": "Solution of a Linear Equation in Two Variables",
+                    "type": "concept",
+                    "canonical_text": "A pair of values, one for x and one for y which satisfy the equation is called a solution of the equation. This solution is written as an ordered pair (x, y).",
+                    "related_terms": [
+                        "ordered pair",
+                        "satisfy"
+                    ],
+                    "summary": "Any pair of values for the variables that makes the left-hand side equal to the right-hand side of the equation."
+                }
+            ],
+            "definitions": [
+                {
+                    "term": "Linear Equation in Two Variables",
+                    "definition": "A linear polynomial in two variables equated to zero."
+                },
+                {
+                    "term": "Solution of a Linear Equation in Two Variables",
+                    "definition": "A pair of values, one for x and one for y which satisfy the equation."
+                }
+            ],
+            "equations": [
+                {
+                    "expression": "ax + by + c = 0",
+                    "latex": "ax + by + c = 0",
+                    "type": "general_form_linear_two_variables"
+                },
+                {
+                    "expression": "3x + y = 10",
+                    "latex": "3x + y = 10",
+                    "type": "linear_equation_two_variables"
+                }
+            ],
+            "worked_examples": [],
+            "figures": [],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [
+                {
+                    "from": "general_form_linear_two_variables",
+                    "relationship": "defined_by",
+                    "to": "Linear Equation in Two Variables"
+                }
+            ],
+            "quality_flags": [],
+            "headings": [
+                "4.2 Linear Equations in Two Variables",
+                "4.3 Solution of a Linear Equation in Two Variables"
+            ]
+        },
+        {
+            "page_number": 72,
+            "pdf_page_number": 4,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "in two variables. In other words, a linear equation in two variables has infinitely many solutions. However, an arbitrary ordered pair need not be a solution of the equation."
+                }
+            ],
+            "concepts": [],
+            "definitions": [],
+            "equations": [],
+            "worked_examples": [
+                {
+                    "example_number": "Example 1",
+                    "problem": "The cost of a notebook is twice that of a pen. Write a linear equation to represent this statement.",
+                    "steps": [
+                        "Let the cost of a notebook be Rs. x and that of a pen be Rs. y.",
+                        "Then we have, x = 2y",
+                        "or x - 2y = 0."
+                    ],
+                    "final_answer": "x - 2y = 0"
+                },
+                {
+                    "example_number": "Example 2",
+                    "problem": "Write each of the following equations in the form ax + by + c = 0 (a > 0) and indicate the values of a, b and c in each case: (i) 3x - 4y = 5, (ii) x + 5 = 2y and (iii) 3x = y.",
+                    "steps": [
+                        "(i) The equation 3x - 4y = 5 can be written as 3x - 4y - 5 = 0, which is of the form ax + by + c = 0. Here a = 3, b = -4 and c = -5.",
+                        "(ii) The equation x + 5 = 2y can be written as x - 2y + 5 = 0, which is of the form ax + by + c = 0. Here a = 1, b = -2 and c = 5.",
+                        "(iii) The equation 3x = y can be written as 3x - y + 0 = 0, which is of the form ax + by + c = 0, where a = 3, b = -1 and c = 0."
+                    ],
+                    "final_answer": "(i) 3x - 4y - 5 = 0 (a=3, b=-4, c=-5); (ii) x - 2y + 5 = 0 (a=1, b=-2, c=5); (iii) 3x - y = 0 (a=3, b=-1, c=0)"
+                },
+                {
+                    "example_number": "Example 3",
+                    "problem": "Write each of the following as an equation in two variables: (i) 4x = 3, (ii) x = -2, (iii) 2y = 5",
+                    "steps": [
+                        "(i) 4x = 3 can be written as 4x + 0.y - 3 = 0.",
+                        "(ii) x = -2 can be written as x + 0.y - 2 = 0 (or x + 0.y + 2 = 0).",
+                        "(iii) 2y = 5 can be written as 0.x + 2y - 5 = 0."
+                    ],
+                    "final_answer": "(i) 4x + 0.y - 3 = 0; (ii) x + 0.y + 2 = 0; (iii) 0.x + 2y - 5 = 0"
+                },
+                {
+                    "example_number": "Example 4",
+                    "problem": "Find any three different solutions for each of the following equations: (i) 2x + 3y = 6, (ii) 3x + 4y = 0, (iii) 2x + 5 = 0.",
+                    "steps": [
+                        "(i) Taking x = 0, the equation 2x + 3y = 6 reduces to 3y = 6, which gives y = 2. Therefore, (0, 2) is a solution of the equation."
+                    ],
+                    "final_answer": "Example continued on next page."
+                }
+            ],
+            "figures": [],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [
+                {
+                    "type": "textbook_discrepancy",
+                    "description": "In Example 3, the problem statement (ii) specifies 'x = -2', but the solution writes 'x = 2 can be written as x + 0.y - 2 = 0', incorrectly omitting the negative sign from the transposition."
+                }
+            ],
+            "headings": [
+                "MATHEMATICS FOR CLASS IX"
+            ]
+        },
+        {
+            "page_number": 73,
+            "pdf_page_number": 3,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Similarly, taking y = 0, the given equation reduces to 2x = 6, which gives x = 3. So, (3, 0) is also a solution of the given equation. Again, taking x = 6, we get 12 + 3y = 6 i.e. y = -2. (6, -2) is also another solution of the equation. Hence, three solutions of the equation 2x + 3y = 6 can be given as (0, 2), (3, 0) and (6, -2)."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "(ii) Taking x = 0, the equation 3x + 4y = 0 reduces to 4y = 0 i.e. y = 0. So, (0, 0) is a solution of the equation 3x + 4y = 0. Again, taking x = 4, we get 12 + 4y = 0 i.e., y = -3. Therefore, (4, -3) is a solution of the given equation. Similarly, taking y = 3, we get 3x + 12 = 0 i.e., x = -4. So, (-4, 3) is also another solution of the equation. Hence, three solutions of the given equation are (0, 0), (4, -3) and (-4, 3)."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "(iii) Writing the equation 2x + 5 = 0 as 2x + 0.y + 5 = 0, we obtain x = -5/2 for any value of y. Hence any three solutions of the given equation are (-5/2, 0), (-5/2, 1) and (-5/2, 2)."
+                }
+            ],
+            "concepts": [],
+            "definitions": [],
+            "equations": [],
+            "worked_examples": [],
+            "figures": [],
+            "tables": [],
+            "questions": [
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (i) x/3 = -2",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(i)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (ii) 4x + 3 = 15",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(ii)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (iii) 3x + 2 = x + 4",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(iii)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (iv) 9x - 4 = 32",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(iv)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (v) 3y + 5(2 - y) = -16",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(v)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (vi) 13t - 4(t + 8) - 4 = 0",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(vi)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (vii) (x - 2)(x - 3) + 2(x - 1)(x - 3) = 3(x - 1)(x - 2)",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(vii)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (viii) x/2 + 5 = x/3 + 7",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(viii)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (ix) (x + 2)/3 - (x - 1)/2 = 1",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(ix)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Solve the following linear equations in one variable : (x) 2(x - 15) = 5(x - 11) + 4",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "1(x)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Write linear equations in two variables to represent the following statements : (i) The cost of a pen is eight times that of a pencil.",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "2(i)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Write linear equations in two variables to represent the following statements : (ii) The difference of two numbers is 5.",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "2(ii)"
+                }
+            ],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [],
+            "headings": [
+                "LINEAR EQUATIONS IN TWO VARIABLES",
+                "EXERCISE 4.1"
+            ]
+        },
+        {
+            "page_number": 74,
+            "pdf_page_number": 5,
+            "text_blocks": [],
+            "concepts": [],
+            "definitions": [],
+            "equations": [],
+            "worked_examples": [],
+            "figures": [],
+            "tables": [],
+            "questions": [
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Write linear equations in two variables to represent the following statements : (iii) Two tables and three chairs cost Rs. 1200.",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "2(iii)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Write linear equations in two variables to represent the following statements : (iv) Two numbers are in the ratio 2 : 3.",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "2(iv)"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Find four different solutions for each of the following equations in two variables: (i) x = 3y, (ii) 4x + 3y = 12, (iii) x + 2y = 6, (iv) 5x + 2y = 0, (v) 3x + 4 = 0, (vi) 2y - 5 = 0",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "3"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Check which of the following are solutions of the equation 3x - 2y = 6 and which are not: (i) (2,0), (ii) (0,3), (iii) (3,0), (iv) (0,-3), (v) (-2,-6), (vi) (4,3)",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "4"
+                },
+                {
+                    "source_type": "textbook_exercise",
+                    "question_text": "Find the value of k if (i) (1,2) is a solution of 3x + 2y = k, (ii) (2,-3) is a solution of kx - 3y + 5 = 0",
+                    "exercise": "EXERCISE 4.1",
+                    "question_number": "5"
+                }
+            ],
+            "answers": [
+                {
+                    "question_number": "1",
+                    "answer": "(i) -6, (ii) 3, (iii) 1, (iv) 4, (v) 13, (vi) 4, (vii) 3/2, (viii) 12, (ix) 1, (x) 7"
+                },
+                {
+                    "question_number": "2",
+                    "answer": "(i) x - 8y = 0, (ii) x - y = 5, (iii) 2x + 3y = 12000, (iv) 3x - 2y = 0"
+                },
+                {
+                    "question_number": "3",
+                    "answer": "(i) (0,0), (3,1), (-6,-2), (1, 1/3); (ii) (0,4), (3,0), (-3,8), (1, 8/3); (iii) (0,3), (6,0), (2,2), (-2,4); (iv) (0,0), (2,-5), (-2,5), (1, -5/2); (v) (-4/3,0), (-4/3,1), (-4/3,2), (-4/3,3); (vi) (0, 5/2), (1, 5/2), (2, 5/2), (3, 5/2)"
+                },
+                {
+                    "question_number": "4",
+                    "answer": "(i) Yes, (ii) No, (iii) No, (iv) Yes, (v) Yes, (vi) Yes"
+                },
+                {
+                    "question_number": "5",
+                    "answer": "(i) 7, (ii) -7"
+                }
+            ],
+            "relationships": [],
+            "quality_flags": [
+                {
+                    "type": "textbook_discrepancy",
+                    "description": "In Q2(iii), the question specifies a cost of '1200' ('Two tables and three chairs cost Rs. 1200.'), but the answer section lists the solution as '2x + 3y = 12000'."
+                }
+            ],
+            "headings": [
+                "MATHEMATICS FOR CLASS IX",
+                "ANSWERS"
+            ]
+        },
+        {
+            "page_number": 75,
+            "pdf_page_number": 6,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "From the previous article you know that a linear equation in two variables has infinitely many solutions and you have obtained some of these solutions algebraically so far. Now, let us look at their geometrical representation. Consider the following equation: 2x + 3y = 12 ... (i)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Some of the solutions of this equation are (0, 4), (6, 0), (3, 2), (-3, 6). The points represented by these ordered pairs are plotted in the cartesian plane. Joining any two of these points we obtain a straight line AB (Fig. 4.1). Also we see that the other two points lie on the line AB."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Now, let us take a point on this line, say P. On finding the co-ordinates of P, we find the ordered pair (9, -2). We see that (9, -2) is a solution of the equation for x = 9 and y = -2 satisfy the equation. Similarly, the co-ordinates of any other point on the straight line AB may be shown to satisfy the equation. But the co-ordinates of a point which is outside the line AB do not satisfy the equation."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Thus, we observe that (i) every point whose co-ordinates satisfy equation (i) lies on the line AB; (ii) the co-ordinates of every point on the line AB constitute a solution of equation (i); and (iii) the co-ordinates of any point which does not lie on the line AB do not constitute a solution of equation (i)."
+                }
+            ],
+            "concepts": [
+                {
+                    "title": "Graph of a Linear Equation in Two Variables",
+                    "type": "concept",
+                    "canonical_text": "The graph of a linear equation is a straight line whose points make up the aggregate of solutions of the equation.",
+                    "related_terms": [
+                        "straight line",
+                        "cartesian plane",
+                        "plot"
+                    ],
+                    "summary": "Geometrical representation of the infinite set of solutions of a linear equation in two variables as a straight line on the Cartesian plane."
+                }
+            ],
+            "definitions": [
+                {
+                    "term": "Graph of a Linear Equation",
+                    "definition": "A straight line whose points make up the aggregate of solutions of the equation."
+                }
+            ],
+            "equations": [
+                {
+                    "expression": "2x + 3y = 12",
+                    "latex": "2x + 3y = 12",
+                    "type": "linear_equation_two_variables"
+                }
+            ],
+            "worked_examples": [],
+            "figures": [
+                {
+                    "figure_number": "Fig. 4.1",
+                    "title": "Graph of 2x + 3y = 12",
+                    "type": "graph",
+                    "description": "Cartesian plane graph showing a line AB representing the equation 2x + 3y = 12. Marked points are (-3, 6), (0, 4), (3, 2), (6, 0), and P(9, -2) on the line, and Q(2, 1) plotted off the line.",
+                    "equations": [
+                        "2x + 3y = 12"
+                    ],
+                    "labelled_points": [
+                        "A",
+                        "B",
+                        "P",
+                        "Q"
+                    ]
+                }
+            ],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [
+                {
+                    "from": "2x + 3y = 12",
+                    "relationship": "illustrated_by",
+                    "to": "Fig. 4.1"
+                }
+            ],
+            "quality_flags": [],
+            "headings": [
+                "LINEAR EQUATIONS IN TWO VARIABLES",
+                "4.4 Graph of a Linear Equation in two Variables"
+            ]
+        },
+        {
+            "page_number": 76,
+            "pdf_page_number": 7,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "So, the linear equation (i) is geometrically represented by the line AB. This line is called the graph of the linear equation. Thus, we conclude that the graph of a linear equation is a straight line whose points make up the aggregate of solutions, of the equation. To obtain the graph of a linear equation in two variables, it is enough to plot two points corresponding to two solutions of the equation and draw a line through them. However, it is better to plot at least three such points so that you can immediately check the correctness of the graph."
+                }
+            ],
+            "concepts": [],
+            "definitions": [],
+            "equations": [
+                {
+                    "expression": "x = 5",
+                    "latex": "x = 5",
+                    "type": "linear_equation_one_variable"
+                },
+                {
+                    "expression": "x + 0.y = 5",
+                    "latex": "x + 0.y = 5",
+                    "type": "linear_equation_two_variables"
+                }
+            ],
+            "worked_examples": [
+                {
+                    "example_number": "Example 1",
+                    "problem": "Draw the graph of x = 5.",
+                    "steps": [
+                        "x = 5 is a linear equation in one variable. However, it can be written as x + 0.y = 5 ... (i) which is a linear equation in two variables.",
+                        "Some of the ordered pairs which satisfy equation (i) are given below: (5, 0), (5, 2), (5, 5), (5, -3) etc.",
+                        "The points represented by the above ordered pairs are plotted in the cartesian plane. Joining these points we get a straight line AB (Fig. 4.2). The line AB thus obtained is the graph of the equation x = 5."
+                    ],
+                    "final_answer": "Vertical line AB parallel to the Y-axis at x = 5."
+                }
+            ],
+            "figures": [
+                {
+                    "figure_number": "Fig. 4.2",
+                    "title": "Graph of x = 5",
+                    "type": "graph",
+                    "description": "A Cartesian coordinate plane with a vertical line AB passing through (5,0), (5,2), (5,5), and (5,-3).",
+                    "equations": [
+                        "x + 0.y = 5"
+                    ],
+                    "labelled_points": [
+                        "A",
+                        "B"
+                    ]
+                }
+            ],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [],
+            "headings": [
+                "MATHEMATICS FOR CLASS IX",
+                "Example 1"
+            ]
+        },
+        {
+            "page_number": 77,
+            "pdf_page_number": 8,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Remarks: (i) The graph of the equation x = c, where c is a constant, is a straight line parallel to the Y-axis and cuts the X-axis at (c, 0). The abscissa of any point lying on this line is c. (ii) The graph of x = 0 is the Y-axis."
+                }
+            ],
+            "concepts": [
+                {
+                    "title": "Graph of x = c",
+                    "type": "concept",
+                    "canonical_text": "The graph of the equation x = c, where c is a constant, is a straight line parallel to the Y-axis and cuts the X-axis at (c, 0). The abscissa of any point lying on this line is c.",
+                    "related_terms": [
+                        "abscissa",
+                        "Y-axis",
+                        "parallel"
+                    ],
+                    "summary": "Vertical line at distance c from the origin, representing equations of the type x = c."
+                }
+            ],
+            "definitions": [],
+            "equations": [
+                {
+                    "expression": "y = 4",
+                    "latex": "y = 4",
+                    "type": "linear_equation_one_variable"
+                },
+                {
+                    "expression": "0.x + y = 4",
+                    "latex": "0.x + y = 4",
+                    "type": "linear_equation_two_variables"
+                }
+            ],
+            "worked_examples": [
+                {
+                    "example_number": "Example 2",
+                    "problem": "Draw the graph of y = 4.",
+                    "steps": [
+                        "y = 4 is a linear equation in one variable. Writing this equation in the form 0.x + y = 4 we have a linear equation in two variables x and y.",
+                        "Some of the ordered pairs satisfying the above equation are given below: (0, 4), (2, 4), (5, 4), (-3, 4) etc.",
+                        "The points represented by the above ordered pairs are plotted. Joining these points we get a straight line AB as shown in Fig. 4.3. The straight line AB is the graph of the equation y = 4."
+                    ],
+                    "final_answer": "Horizontal line AB parallel to the X-axis at y = 4."
+                }
+            ],
+            "figures": [
+                {
+                    "figure_number": "Fig. 4.3",
+                    "title": "Graph of y = 4",
+                    "type": "graph",
+                    "description": "A Cartesian coordinate plane showing a horizontal straight line AB parallel to the X-axis at y = 4. Labelled points include (-3, 4), (0, 4), (2, 4), and (5, 4).",
+                    "equations": [
+                        "0.x + y = 4"
+                    ],
+                    "labelled_points": [
+                        "A",
+                        "B"
+                    ]
+                }
+            ],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [],
+            "headings": [
+                "LINEAR EQUATIONS IN TWO VARIABLES",
+                "Remarks",
+                "Example 2"
+            ]
+        },
+        {
+            "page_number": 78,
+            "pdf_page_number": 9,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Remarks: (i) The graph of the equation y = c, where c is a constant, is a straight line parallel to the X-axis. It cuts the Y-axis at the point (0, c). The ordinate of any point on this line is c. (ii) The graph of y = 0 is the X-axis."
+                }
+            ],
+            "concepts": [
+                {
+                    "title": "Graph of y = c",
+                    "type": "concept",
+                    "canonical_text": "The graph of the equation y = c, where c is a constant, is a straight line parallel to the X-axis. It cuts the Y-axis at the point (0, c). The ordinate of any point on this line is c.",
+                    "related_terms": [
+                        "ordinate",
+                        "X-axis",
+                        "parallel"
+                    ],
+                    "summary": "Horizontal line at height c from the origin, representing equations of the type y = c."
+                }
+            ],
+            "definitions": [],
+            "equations": [
+                {
+                    "expression": "3x + 5y = 15",
+                    "latex": "3x + 5y = 15",
+                    "type": "linear_equation_two_variables"
+                }
+            ],
+            "worked_examples": [
+                {
+                    "example_number": "Example 3",
+                    "problem": "Draw the graph of 3x + 5y = 15.",
+                    "steps": [
+                        "3x + 5y = 15 is a linear equation in two variables x and y.",
+                        "Some of the ordered pairs satisfying this equation are (0,3), (5,0), (10, -3), (-5, 6) etc.",
+                        "Plotting the points represented by these ordered pairs and joining them we get a straight line AB as shown in Fig. 4.4. The straight line AB is the graph of the equation 3x + 5y = 15."
+                    ],
+                    "final_answer": "Straight line AB passing through (0, 3) and (5, 0)."
+                },
+                {
+                    "example_number": "Example 4",
+                    "problem": "If the work done by a constant force acting on a body is directly proportional to the distance travelled by the body, the constant of proportionality being the constant force, express this in the form of an equation in two variables and draw the graph of the same by taking the constant force as 2 units. Also read from the graph the work done when the distance travelled by the body is 5 units.",
+                    "steps": [
+                        "Example continues on next page."
+                    ],
+                    "final_answer": "Example continues on next page."
+                }
+            ],
+            "figures": [
+                {
+                    "figure_number": "Fig. 4.4",
+                    "title": "Graph of 3x + 5y = 15",
+                    "type": "graph",
+                    "description": "Cartesian coordinate plane with straight line AB passing through (-5, 6), (0, 3), (5, 0), and (10, -3).",
+                    "equations": [
+                        "3x + 5y = 15"
+                    ],
+                    "labelled_points": [
+                        "A",
+                        "B"
+                    ]
+                }
+            ],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [],
+            "headings": [
+                "MATHEMATICS FOR CLASS IX",
+                "Remarks",
+                "Example 3",
+                "Example 4"
+            ]
+        },
+        {
+            "page_number": 79,
+            "pdf_page_number": 10,
+            "text_blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "To draw the graph of this equation, we take some of the ordered pairs satisfying the equation as given below :"
+                }
+            ],
+            "concepts": [],
+            "definitions": [],
+            "equations": [
+                {
+                    "expression": "y = kx",
+                    "latex": "y = kx",
+                    "type": "linear_equation_two_variables"
+                },
+                {
+                    "expression": "y = 2x",
+                    "latex": "y = 2x",
+                    "type": "linear_equation_two_variables"
+                }
+            ],
+            "worked_examples": [
+                {
+                    "example_number": "Example 4",
+                    "problem": "If the work done by a constant force acting on a body is directly proportional to the distance travelled by the body...",
+                    "steps": [
+                        "Here the variables involved are distance and work. Let x be the distance travelled by the body and the work done by the force be y units.",
+                        "It is given that y is directly proportional to x (y \\propto x).",
+                        "If k be the constant force acting on the body (which is also the constant of proportionality), then y = kx, which is the linear equation representing the given statement.",
+                        "If k = 2 units, the above equation becomes y = 2x.",
+                        "To draw the graph of this equation, we take some of the ordered pairs satisfying the equation as given below: (0,0), (2,4), (4,8), (5,10), (-1,-2)."
+                    ],
+                    "final_answer": "y = 2x. From the graph, when distance x = 5 units, work done y = 10 units."
+                }
+            ],
+            "figures": [
+                {
+                    "figure_number": "Fig. 4.5",
+                    "title": "Graph of y = 2x",
+                    "type": "graph",
+                    "description": "Cartesian coordinate plane showing a straight line AB representing y = 2x. Plotted points are (-1, -2), (0, 0), (2, 4), (4, 8), and (5, 10).",
+                    "equations": [
+                        "y = 2x"
+                    ],
+                    "labelled_points": [
+                        "A",
+                        "B"
+                    ]
+                }
+            ],
+            "tables": [],
+            "questions": [],
+            "answers": [],
+            "relationships": [],
+            "quality_flags": [
+                {
+                    "type": "missing_text",
+                    "description": "The text states 'as given below :' preceding a table of values, but no table of values is actually printed on this page."
+                }
+            ],
+            "headings": [
+                "LINEAR EQUATIONS IN TWO VARIABLES"
+            ]
+        }
+    ]
+}

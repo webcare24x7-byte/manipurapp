@@ -1,0 +1,5 @@
+<?php
+declare(strict_types=1);
+namespace App\Modules\CommercialRental\Models;
+use App\Core\Database;
+final class CommercialRentalDashboard{private Database$db;public function __construct(){$this->db=app()->get('db');}public function summary(int$t):array{$q=fn(string$sql,array$p=[])=>(int)(($this->db->fetch($sql,$p)['c']??0));return['providers'=>$q("SELECT COUNT(*) c FROM commercial_rental_providers WHERE tenant_id=? AND deleted_at IS NULL",[$t]),'categories'=>$q("SELECT COUNT(*) c FROM commercial_rental_categories WHERE tenant_id=? AND deleted_at IS NULL",[$t]),'vehicles'=>$q("SELECT COUNT(*) c FROM commercial_rental_vehicles WHERE tenant_id=? AND deleted_at IS NULL",[$t]),'available'=>$q("SELECT COUNT(*) c FROM commercial_rental_vehicles WHERE tenant_id=? AND availability='Available' AND deleted_at IS NULL",[$t]),'requests'=>$q("SELECT COUNT(*) c FROM commercial_rental_requests WHERE tenant_id=? AND deleted_at IS NULL",[$t]),'pending'=>$q("SELECT COUNT(*) c FROM commercial_rental_requests WHERE tenant_id=? AND status IN ('REQUESTED','CONTACTING','QUOTED') AND deleted_at IS NULL",[$t])];}}

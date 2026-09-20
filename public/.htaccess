@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteBase /manipurapp/public/
+
+    # If the request is an existing file or directory, serve it normally
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Otherwise route everything to index.php
+    RewriteRule ^ index.php [QSA,L]
+
+</IfModule>

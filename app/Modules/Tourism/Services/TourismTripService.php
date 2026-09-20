@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); namespace App\Modules\Tourism\Services; use App\Modules\Tourism\Models\TourismTrip; final class TourismTripService{private TourismTrip $m;public function __construct(){$this->m=new TourismTrip();}public function all(int $t):array{return $this->m->all($t);}}

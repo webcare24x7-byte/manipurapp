@@ -1,0 +1,270 @@
+/* =========================================================
+   CHURCHOS APPLICATION STYLESHEET
+   Central CSS Entry Point
+========================================================= */
+
+
+/* =========================================================
+   CORE
+========================================================= */
+
+@import url("base.css");
+
+@import url("layout.css");
+
+@import url("sidebar.css");
+
+@import url("topbar.css");
+
+@import url("website.css");
+
+@import url("auth.css");
+
+@import url("dashboard.css");
+
+@import url("responsive.css");
+
+
+/* =========================================================
+   APPLICATION SHELL
+   Sidebar-aware global layout
+========================================================= */
+
+
+/* =========================================================
+   APP LAYOUT
+========================================================= */
+
+.app-layout {
+    width: 100%;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION AREA
+========================================================= */
+
+/*
+ * The sidebar is fixed and therefore does NOT participate
+ * in normal document flow.
+ *
+ * .app-main remains full width.
+ *
+ * The page content, topbar and footer independently account
+ * for the sidebar width.
+ */
+
+.app-main {
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 100vh;
+
+    margin-left: 0;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+/*
+ * Desktop:
+ *
+ * Sidebar expanded = 226px
+ * Sidebar collapsed = 66px
+ *
+ * This allows dashboard/module content to reclaim the
+ * 160px when the sidebar collapses.
+ */
+/* =========================================================
+   PAGE CONTENT
+   Comfortable horizontal breathing room
+========================================================= */
+
+.page-content {
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding-top: 62px;
+
+    padding-right: 24px;
+
+    padding-bottom: 42px;
+
+    padding-left: calc(226px + 24px);
+
+    transition:
+        padding-left .2s ease;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+body.sidebar-collapsed .page-content {
+    padding-left: calc(66px + 24px);
+
+    padding-right: 24px;
+}
+
+/* =========================================================
+   CONTENT CHILDREN
+========================================================= */
+
+/*
+ * Prevent individual modules from forcing the application
+ * shell wider than the viewport.
+ */
+
+.page-content > * {
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+/*
+ * Dashboard remains responsible only for its own content
+ * width and internal layout.
+ *
+ * The application shell provides the available width.
+ */
+
+.app-main .dashboard-page {
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+/*
+ * IMPORTANT:
+ *
+ * .topbar is position: fixed.
+ *
+ * Therefore it is positioned relative to the viewport,
+ * not .app-main.
+ *
+ * Its own CSS handles:
+ *
+ * Expanded  -> left: 226px
+ * Collapsed  -> left: 66px
+ *
+ * DO NOT override left here.
+ */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+/*
+ * Same rule as the topbar.
+ *
+ * footer.css handles:
+ *
+ * Expanded  -> left: 226px
+ * Collapsed  -> left: 66px
+ *
+ * DO NOT override left here.
+ */
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /*
+     * On mobile the sidebar becomes a drawer.
+     * It therefore does not consume layout width.
+     */
+
+    .app-main {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    /*
+     * Full-width mobile content.
+     */
+
+    .page-content {
+        width: 100%;
+
+        padding-top: 58px;
+
+        padding-right: 0;
+
+        padding-bottom: 40px;
+
+        padding-left: 0;
+    }
+
+
+    body.sidebar-collapsed .page-content {
+        padding-left: 0;
+    }
+
+
+    /*
+     * Dashboard gets the complete mobile width.
+     */
+
+    .app-main .dashboard-page {
+        width: 100%;
+
+        max-width: none;
+
+        margin-left: 0;
+
+        margin-right: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .page-content {
+        padding-top: 58px;
+
+        padding-bottom: 38px;
+    }
+
+}

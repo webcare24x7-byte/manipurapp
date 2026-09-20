@@ -1,0 +1,23 @@
+MANIPURAPP RESTAURANT MODULE
+===========================
+
+Requirements
+------------
+- Existing ManipurApp core application
+- Existing businesses table
+- Existing permissions table
+- MySQL 8.x or MariaDB compatible database
+
+Install
+-------
+1. Copy the Restaurant module into the application's Modules directory.
+2. Run Migrations/001_create_restaurant_foundation.sql.
+3. Run Migrations/002_restaurant_permissions.sql.
+4. Ensure the application's module loader loads Restaurant/routes.php.
+
+Notes
+-----
+- Restaurant records are backed by an existing businesses row.
+- tenant_id is enforced in Restaurant model queries.
+- The current foundation migration includes UUID and deleted_at columns required by the module models.
+- This module intentionally does not create generic orders/payments or modify Taxi/Fresh Food tables.
