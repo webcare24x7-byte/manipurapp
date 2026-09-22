@@ -123,4 +123,4 @@ $popularItems = array_slice($featuredItems, 0, 8);
 <script>
 (()=>{document.getElementById('useLocation')?.addEventListener('click',()=>{if(!navigator.geolocation){alert('Location is not supported on this device.');return;}navigator.geolocation.getCurrentPosition(p=>{const u=new URL(location.href);u.searchParams.set('lat',p.coords.latitude.toFixed(7));u.searchParams.set('lng',p.coords.longitude.toFixed(7));location.href=u.toString();},()=>alert('Location permission was not granted. You can still browse restaurants around Imphal.'),{enableHighAccuracy:true,timeout:10000,maximumAge:300000});});document.getElementById('clearLocation')?.addEventListener('click',()=>{const u=new URL(location.href);u.searchParams.delete('lat');u.searchParams.delete('lng');location.href=u.toString();});})();
 </script>
-
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

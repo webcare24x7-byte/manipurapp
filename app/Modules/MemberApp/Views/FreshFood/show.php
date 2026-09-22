@@ -15,3 +15,4 @@ function fsEsc(mixed $v):string{return htmlspecialchars((string)$v,ENT_QUOTES,'U
 <?php if(!$products): ?><div style="background:#f3f8f5;border-radius:14px;padding:24px;text-align:center;font-size:11px;color:#687a72">No products are available in this category.</div><?php endif; ?>
 <?php include __DIR__.'/../Shared/fresh-food-cart-widget.php'; ?><?php include __DIR__.'/../Shared/member-notification-widget.php'; ?></div>
 <nav class="fs-nav"><a href="<?=fsEsc($base)?>/member"><i>⌂</i>Home</a><a class="active" href="<?=fsEsc($base)?>/member/fresh-food"><i>🥬</i>Fresh</a><a href="<?=fsEsc($base)?>/member/bookings"><i>▣</i>Bookings</a><a href="<?=fsEsc($base)?>/member/profile"><i>♙</i>Profile</a></nav>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

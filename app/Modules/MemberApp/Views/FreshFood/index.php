@@ -87,3 +87,4 @@ $promotions = [
 <script>
 document.getElementById('useLocation')?.addEventListener('click',()=>{if(!navigator.geolocation){alert('Location is not available in this browser.');return}navigator.geolocation.getCurrentPosition(p=>{const u=new URL(location.href);u.searchParams.set('lat',p.coords.latitude.toFixed(7));u.searchParams.set('lng',p.coords.longitude.toFixed(7));location.href=u.toString()},()=>alert('Location permission was not granted.'),{enableHighAccuracy:true,timeout:10000,maximumAge:300000})});
 </script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

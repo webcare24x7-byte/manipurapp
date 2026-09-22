@@ -52,6 +52,15 @@ $router->get('/member/session', [MemberAppController::class, 'sessionStatus']);
 $router->get('/member/notifications', [MemberAppController::class, 'notifications']);
 $router->get('/member/notifications/status', [MemberAppController::class, 'notificationStatus']);
 $router->post('/member/ai/ask', [MemberAppController::class, 'memberAIAsk']);
+$router->post('/member/ai/freeform', [MemberAppController::class, 'memberAIFreeform']);
+$router->get('/member/ilp', [MemberAppController::class, 'ilp']);
+$router->post('/member/ilp/analyze', [MemberAppController::class, 'ilpAnalyze']);
+
+// Public information and service directory pages.
+$router->get('/member/services', [MemberAppController::class, 'services']);
+$router->get('/member/services/{service}', [MemberAppController::class, 'servicePage']);
+$router->get('/member/blog', [MemberAppController::class, 'blog']);
+$router->get('/member/blog/{slug}', [MemberAppController::class, 'blogPost']);
 $router->post('/member/notifications/read', [MemberAppController::class, 'notificationsRead']);
 
 
@@ -121,3 +130,6 @@ $router->get('/member/profile', [MemberAppController::class, 'profile']);
 $router->get('/member/bookings', [MemberAppController::class, 'bookings']);
 $router->get('/member/bookings/{id}', [MemberAppController::class, 'booking']);
 $router->post('/member/bookings/{id}/cancel', [MemberAppController::class, 'cancelBooking']);
+
+// Static public information pages. Kept at the end so existing member routes win.
+$router->get('/member/{slug}', [MemberAppController::class, 'staticPage']);

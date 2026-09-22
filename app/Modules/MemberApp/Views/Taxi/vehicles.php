@@ -24,3 +24,4 @@ $scheduled=$pickupDate&&$pickupTime?$pickupDate.' '.$pickupTime.':00':null;$retu
 </div>
 <nav class="ma-nav"><a href="<?=maVe($basePath)?>/member"><i>⌂</i>Home</a><a class="active" href="<?=maVe($basePath)?>/member/taxi"><i>🚕</i>Services</a><a href="<?=maVe($basePath)?>/member/bookings"><i>▣</i>Bookings</a><a href="<?=maVe($basePath)?>/member/profile"><i>♙</i>Profile</a></nav>
 <script>document.querySelectorAll('[data-seat]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-seat]').forEach(x=>x.classList.remove('active'));b.classList.add('active');const n=+b.dataset.seat;document.querySelectorAll('.ma-vehicle').forEach(v=>v.style.display=!n||+v.dataset.seats>=n?'block':'none')}));</script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

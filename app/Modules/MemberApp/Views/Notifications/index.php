@@ -17,3 +17,4 @@ function mnDt(?string $v): string { if(!$v)return '—'; try{return (new DateTim
 <?php else: foreach($list as $n): $source=(string)($n['source']??''); ?><a class="mn-card" href="<?=mnEsc($basePath.(string)($n['action_url']??'/member'))?>"><div class="mn-top"><span class="mn-icon"><?= $source==='taxi' ? '🚕' : '🍛' ?></span><span class="mn-title"><?=mnEsc($n['title']??'Update')?></span><span class="mn-time"><?=mnEsc(mnDt($n['created_at']??null))?></span></div><div class="mn-message"><?=mnEsc($n['message']??'')?></div></a><?php endforeach; endif; ?>
 </div>
 <nav class="mn-nav"><a href="<?=mnEsc($basePath)?>/member"><i>⌂</i>Home</a><a href="<?=mnEsc($basePath)?>/member/taxi"><i>🚕</i>Services</a><a href="<?=mnEsc($basePath)?>/member/bookings"><i>▣</i>Bookings</a><a href="<?=mnEsc($basePath)?>/member/profile"><i>♙</i>Profile</a></nav>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

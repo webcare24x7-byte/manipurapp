@@ -73,5 +73,8 @@ $groups = [
   <a class="ma-nav-item" href="<?= $esc($basePath) ?>/member">⌂<span>Home</span></a>
   <a class="ma-nav-item active" href="<?= $esc($basePath) ?>/member/search">⌕<span>Search</span></a>
   <a class="ma-nav-item" href="<?= $esc($basePath) ?>/member/bookings">▣<span>Bookings</span></a>
+  <a class="ma-nav-item ma-nav-ilp" href="<?= $esc($basePath) ?>/member/ilp">▤<span>ILP</span></a>
+  <a class="ma-nav-item ma-nav-ai" href="<?= $esc($basePath) ?>/member#ask-ai">✦<span>Ask AI</span></a>
   <a class="ma-nav-item" href="<?= $esc($basePath) ?>/member/profile">♙<span>Profile</span></a>
 </nav>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

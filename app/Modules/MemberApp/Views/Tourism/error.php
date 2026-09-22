@@ -1,3 +1,4 @@
 <?php include __DIR__ . '/../Shared/member-desktop.css.php';
 include __DIR__ . '/../Shared/member-desktop-header.php'; ?>
 <?php require __DIR__.'/_style.php'; ?><div class="ma-tour"><header class="ma-tour-head"><a class="ma-tour-brand" href="<?=$basePath?>/member/tourism"><span class="ma-tour-mark">🏔️</span><span><strong>Explore Manipur</strong><small>Tourism</small></span></a><a class="ma-tour-back" href="<?=$basePath?>/member/tourism">← Explore</a></header><div class="ma-tour-empty" style="margin-top:35px"><div style="font-size:45px">🌿</div><h2><?=maTourEsc($title??'Not found')?></h2><p><?=maTourEsc($message??'The requested tourism item could not be found.')?></p><div class="ma-tour-action" style="justify-content:center"><a href="<?=$basePath?>/member/tourism">Back to Explore</a></div></div></div>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

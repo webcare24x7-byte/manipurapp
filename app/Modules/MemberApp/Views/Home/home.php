@@ -211,6 +211,14 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
 </style>
 
 
+<style>
+/* Digital ILP Helper home entry — additive only. */
+.ma-home-ilp-promo{width:100%;display:flex;align-items:center;gap:10px;margin:8px 0 12px;padding:12px 14px;border:1px solid #d9e6e1;border-radius:18px;background:linear-gradient(135deg,#f5fbf8,#fff);box-shadow:0 7px 18px rgba(8,82,64,.045);text-decoration:none;color:#14342b}.ma-home-ilp-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#e7f5ef;color:#087d64;font-weight:950;flex:none}.ma-home-ilp-copy{min-width:0;flex:1}.ma-home-ilp-copy span{display:block;font-size:7px;letter-spacing:1px;color:#087d64;font-weight:950}.ma-home-ilp-copy strong{display:block;margin:2px 0;font-size:14px}.ma-home-ilp-copy small{display:block;color:#71817a;font-size:8.5px;line-height:1.35}.ma-home-ilp-promo>b{flex:none;padding:8px 10px;border-radius:10px;background:#087d64;color:#fff;font-size:8px;font-weight:950}.ma-home-ilp-promo:hover{border-color:#a9cec1;transform:translateY(-1px)}
+.mdh-ilp-cta{width:100%;display:flex;align-items:center;gap:14px;margin:12px 0 0;padding:14px 16px;border:1px solid #d6e7e0;border-radius:18px;background:linear-gradient(135deg,#f5fbf8,#fff);box-shadow:0 8px 20px rgba(8,82,64,.05);text-decoration:none;color:#14342b}.mdh-ilp-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:#e7f5ef;color:#087d64;font-weight:950;flex:none}.mdh-ilp-cta span:nth-child(2){min-width:0;flex:1}.mdh-ilp-cta small{display:block;color:#087d64;font-size:8px;font-weight:950;letter-spacing:1px}.mdh-ilp-cta strong{display:block;margin:2px 0;font-size:15px}.mdh-ilp-cta em{display:block;color:#71817a;font-style:normal;font-size:10px}.mdh-ilp-cta>b{padding:9px 12px;border-radius:10px;background:#087d64;color:#fff;font-size:9px;white-space:nowrap}
+@media(min-width:901px){.ma-home-ilp-promo{display:none}}
+@media(max-width:900px){.mdh-ilp-cta{display:none}}
+</style>
+
 <!-- Desktop Home v2: illustration-inspired full-width dashboard. Mobile keeps the existing PWA home below. -->
 <div class="ma-desktop-home" aria-label="ManipurApp desktop home">
     <header class="mdh-topbar">
@@ -224,6 +232,8 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
             <a class="active" href="<?= memberAppEsc($basePath) ?>/member"><span>⌂</span>Home</a>
             <a href="<?= memberAppEsc($basePath) ?>/member/tourism"><span>⌖</span>Explore</a>
             <a href="<?= memberAppEsc($basePath) ?>/member/bookings"><span>▣</span>Bookings</a>
+            <a href="<?= memberAppEsc($basePath) ?>/member/ilp"><span>▤</span>ILP Helper</a>
+            <a href="<?= memberAppEsc($basePath) ?>/member#ask-ai" data-ai-open><span>✦</span>Ask AI</a>
             <a href="#saved" data-coming-soon><span>♡</span>Saved</a>
             <a href="<?= memberAppEsc($basePath) ?>/member/profile"><span>♙</span>Profile</a>
         </nav>
@@ -256,6 +266,12 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
         <div class="mdh-ai-cta-copy"><small>MANIPURAPP AI</small><h2>Visiting Manipur for the first time?</h2><p>Need help planning your stay, places to visit, food and local travel.</p></div>
         <span class="mdh-ai-cta-button">Plan with AI →</span>
     </section>
+
+    <a class="mdh-ilp-cta" href="<?= memberAppEsc($basePath) ?>/member/ilp">
+        <span class="mdh-ilp-icon">▣</span>
+        <span><small>TRAVELLING TO MANIPUR?</small><strong>Digital ILP Helper</strong><em>Understand the main ILP categories and open the official application portal.</em></span>
+        <b>View guide →</b>
+    </a>
 
     <main class="mdh-content">
         <section class="mdh-services">
@@ -351,6 +367,12 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
         <span class="ma-home-ai-copy"><span>✦ MANIPURAPP AI</span><h2>Visiting Manipur for the first time?</h2><p>Need help planning your stay, places to visit, food and local travel?</p></span>
         <b>Plan with AI →</b>
     </button>
+
+    <a class="ma-home-ilp-promo" href="<?= memberAppEsc($basePath) ?>/member/ilp">
+        <span class="ma-home-ilp-icon">▣</span>
+        <span class="ma-home-ilp-copy"><span>TRAVELLING TO MANIPUR?</span><strong>Digital ILP Helper</strong><small>Understand the main ILP categories and open the official portal.</small></span>
+        <b>View guide →</b>
+    </a>
 
     <div class="location-row">
         <button class="location" type="button" data-location-picker>
@@ -587,6 +609,8 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
         <a class="ma-nav-item active" href="<?= memberAppEsc($basePath) ?>/member"><svg viewBox="0 0 24 24" fill="none"><path d="m4 10 8-6 8 6v9H4v-9Z" fill="currentColor"/><path d="M9 19v-5h6v5" stroke="white" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Home</span></a>
         <a class="ma-nav-item" href="<?= memberAppEsc($basePath) ?>/member/tourism"><svg viewBox="0 0 24 24" fill="none"><path d="m4 6 6-2 4 2 6-2v14l-6 2-4-2-6 2V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 4v14m4-12v14" stroke="currentColor" stroke-width="1.5"/></svg><span>Explore</span></a>
         <a class="ma-nav-item" href="<?= memberAppEsc($basePath) ?>/member/bookings"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5M9 2v4m6-4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Bookings</span></a>
+        <a class="ma-nav-item ma-nav-ilp" href="<?= memberAppEsc($basePath) ?>/member/ilp"><span class="ma-nav-symbol">▤</span><span>ILP</span></a>
+        <a class="ma-nav-item ma-nav-ai" href="<?= memberAppEsc($basePath) ?>/member#ask-ai" data-ai-open><span class="ma-nav-symbol">✦</span><span>Ask AI</span></a>
         <a class="ma-nav-item" href="#saved" data-coming-soon><svg viewBox="0 0 24 24" fill="none"><path d="M20 8.5c0 5.5-8 10.5-8 10.5S4 14 4 8.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8 2.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Saved</span></a>
         <?php if ($isLoggedIn): ?>
             <a class="ma-nav-item" href="<?= memberAppEsc($basePath) ?>/member/profile"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M5 20c0-4 3-6 7-6s7 6 7 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Profile</span></a>
@@ -598,7 +622,17 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
     <div class="ma-toast" id="memberapp-toast" role="status" aria-live="polite"></div>
 </div>
 
-<?php $aiScope = 'TOURISM'; $aiContext = ''; $aiTriggerTitle = 'Need help planning your Manipur trip?'; $aiTriggerSubtitle = 'Ask about stays, places, food, experiences and local travel.'; $aiTriggerLabel = 'Plan with AI →'; $aiDialogTitle = 'Plan your Manipur visit'; $aiHideTrigger = true; include __DIR__ . '/../AI/ask.php'; ?>
+
+<style>
+@media(max-width:899px){
+  .ma-bottom-nav{grid-template-columns:repeat(7,minmax(0,1fr)) !important;width:min(620px,calc(100% - 8px));}
+  .ma-bottom-nav .ma-nav-item{padding-left:1px;padding-right:1px;font-size:8px;}
+  .ma-bottom-nav .ma-nav-item span:last-child{font-size:8px;}
+  .ma-nav-symbol{display:block;font-size:17px !important;line-height:18px;margin-top:0 !important;}
+}
+</style>
+
+<?php include __DIR__ . '/../AI/freeform.php'; ?>
 
 <script>
 (()=>{
@@ -656,4 +690,4 @@ foreach (is_array($maFreshCart['items'] ?? null) ? $maFreshCart['items'] : [] as
     setupCarousel('#homeOfferCarousel','[data-offer-slide]','[data-offer-dot]','[data-offer-prev]','[data-offer-next]',4800);
 })();
 </script>
-
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

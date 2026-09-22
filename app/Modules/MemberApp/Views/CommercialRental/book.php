@@ -71,3 +71,4 @@ $defaultName=trim(implode(' ',array_filter([$member['first_name']??'',$member['m
  },()=>{b.textContent='⌖';alert('Location permission was not granted. Please enter the pickup area manually.');},{enableHighAccuracy:true,timeout:10000});});
 })();
 </script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

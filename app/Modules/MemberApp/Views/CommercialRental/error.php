@@ -10,3 +10,4 @@ function maCrErr(mixed $v):string{return htmlspecialchars((string)$v,ENT_QUOTES,
 <div style="font-size:48px">🚚</div><h1><?=maCrErr($title??'Commercial Rental')?></h1><p style="color:#687972;line-height:1.6"><?=maCrErr($message??'Something went wrong.')?></p>
 <a href="<?=maCrErr($basePath)?>/member/commercial-rental" style="display:inline-block;padding:12px 18px;background:#087d64;color:#fff;border-radius:13px;text-decoration:none;font-weight:800">Back to commercial rental</a>
 </div>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

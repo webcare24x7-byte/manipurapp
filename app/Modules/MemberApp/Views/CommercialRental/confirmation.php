@@ -39,3 +39,4 @@ $current=array_search($status,$steps,true); $current=$current===false?0:$current
 <div class="ma-crc-actions"><a class="ma-crc-btn secondary" href="<?=maCrCE($basePath)?>/member/commercial-rental">Find another vehicle</a><a class="ma-crc-btn primary" href="<?=maCrCE($basePath)?>/member/bookings">My bookings →</a></div>
 <nav class="ma-crc-nav"><a href="<?=maCrCE($basePath)?>/member"><i>⌂</i>Home</a><a class="active" href="<?=maCrCE($basePath)?>/member/commercial-rental"><i>🚚</i>Services</a><a href="<?=maCrCE($basePath)?>/member/bookings"><i>▣</i>Bookings</a><a href="<?=maCrCE($basePath)?>/member/profile"><i>♙</i>Profile</a></nav>
 </div>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

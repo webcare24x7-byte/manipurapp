@@ -22,6 +22,8 @@ $memberDesktopHomeActive = $memberDesktopPath === $memberDesktopBasePath . '/mem
     <a class="<?= $memberDesktopHomeActive ? 'active' : '' ?>" href="<?= $memberDesktopEsc($memberDesktopBasePath) ?>/member"><span>⌂</span>Home</a>
     <a class="<?= $memberDesktopExploreActive ? 'active' : '' ?>" href="<?= $memberDesktopEsc($memberDesktopBasePath) ?>/member/tourism"><span>⌖</span>Explore</a>
     <a class="<?= $memberDesktopBookingsActive ? 'active' : '' ?>" href="<?= $memberDesktopEsc($memberDesktopBasePath) ?>/member/bookings"><span>▣</span>Bookings</a>
+    <a href="<?= $memberDesktopEsc($memberDesktopBasePath) ?>/member/ilp"><span>▤</span>ILP Helper</a>
+    <a href="<?= $memberDesktopEsc($memberDesktopBasePath) ?>/member#ask-ai" data-ai-open><span>✦</span>Ask AI</a>
     <a class="<?= $memberDesktopProfileActive ? 'active' : '' ?>" href="<?= $memberDesktopEsc($memberDesktopBasePath) ?>/member/profile"><span>♙</span>Profile</a>
   </nav>
   <div class="mdgh-right">

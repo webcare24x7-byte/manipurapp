@@ -145,3 +145,4 @@ function maMoney(mixed $v): string { return '₹'.number_format((float)$v, 2); }
   });
 })();
 </script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

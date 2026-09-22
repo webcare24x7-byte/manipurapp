@@ -14,6 +14,7 @@ use App\Modules\MemberApp\Services\MemberNotificationService;
 use App\Modules\MemberApp\Services\MemberCommercialRentalService;
 use App\Modules\MemberApp\Services\MemberTourismService;
 use App\Modules\MemberApp\Services\MemberAIService;
+use App\Modules\ILP\Services\ILPHelperService;
 use RuntimeException;
 use Throwable;
 
@@ -34,6 +35,7 @@ final class MemberAppController extends Controller
     private MemberCommercialRentalService $commercialRentalService;
     private MemberTourismService $tourismService;
     private MemberAIService $aiService;
+    private ILPHelperService $ilpService;
 
     public function __construct()
     {
@@ -46,6 +48,7 @@ final class MemberAppController extends Controller
         $this->commercialRentalService = new MemberCommercialRentalService();
         $this->tourismService = new MemberTourismService();
         $this->aiService = new MemberAIService();
+        $this->ilpService = new ILPHelperService();
     }
 
     /**
@@ -58,6 +61,7 @@ final class MemberAppController extends Controller
             [
                 'title'  => 'ManipurApp',
                 'member' => $this->currentMember(),
+                'csrf'   => $this->isAuthenticated() ? $this->csrf->token() : null,
             ],
             'memberapp'
         );
@@ -1446,6 +1450,317 @@ final class MemberAppController extends Controller
                 'message' => $e->getMessage(),
             ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         }
+    }
+
+    /** POST /member/ai/freeform */
+    public function memberAIFreeform(): void
+    {
+        header('Content-Type: application/json; charset=utf-8');
+
+        if (!$this->isAuthenticated()) {
+            http_response_code(401);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Please login to use Smart AI.',
+                'login_required' => true,
+            ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            return;
+        }
+
+        try {
+            if (!$this->csrf->validate($_POST['_token'] ?? null)) {
+                throw new RuntimeException('Your form session has expired. Please refresh the page and try again.');
+            }
+
+            $auth = $_SESSION['memberapp_auth'];
+            $result = $this->aiService->freeform(
+                (int)($auth['tenant_id'] ?? MemberAuthService::TENANT_ID),
+                (int)$auth['user_id'],
+                (string)($_POST['question'] ?? '')
+            );
+
+            echo json_encode([
+                'success' => true,
+                'data' => $result,
+            ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        } catch (Throwable $e) {
+            http_response_code(422);
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        }
+    }
+
+    /** GET /member/ilp */
+    public function ilp(): void
+    {
+        $this->view('MemberApp::ILP.index', [
+            'title' => 'Digital ILP Helper',
+            'permitTypes' => $this->ilpService->permitTypes(),
+            'officialUrl' => 'https://manipurilponline.mn.gov.in/',
+        ], 'memberapp');
+    }
+
+    /** POST /member/ilp/analyze */
+    public function ilpAnalyze(): void
+    {
+        header('Content-Type: application/json; charset=utf-8');
+
+        try {
+            $input = [
+                'outside_manipur' => isset($_POST['outside_manipur']) && $_POST['outside_manipur'] === '1',
+                'purpose' => trim((string)($_POST['purpose'] ?? '')),
+                'duration_days' => trim((string)($_POST['duration_days'] ?? '')),
+                'sponsor_available' => isset($_POST['sponsor_available']) && $_POST['sponsor_available'] === '1',
+            ];
+
+            echo json_encode([
+                'success' => true,
+                'data' => $this->ilpService->analyze($input),
+            ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        } catch (Throwable $e) {
+            http_response_code(422);
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        }
+    }
+
+    /** GET /member/blog */
+    public function blog(): void
+    {
+        $posts = [
+            [
+                'slug' => 'discovering-manipur-one-platform',
+                'title' => 'Discovering Manipur, One Platform at a Time',
+                'excerpt' => 'A look at how ManipurApp brings places, food, transport, tourism and local businesses together for people and visitors.',
+                'category' => 'ManipurApp Stories',
+                'tags' => ['Manipur', 'Local Business', 'Tourism', 'ManipurApp'],
+                'author' => 'ManipurApp Team',
+                'published_at' => '22 September 2026',
+                'cover_image' => 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80',
+                'reading_time' => '4 min read',
+            ],
+        ];
+
+        $this->view('MemberApp::Blog.index', [
+            'title' => 'Blog',
+            'posts' => $posts,
+            'member' => $this->currentMember(),
+        ], 'memberapp');
+    }
+
+    /** GET /member/blog/{slug} */
+    public function blogPost(string $slug): void
+    {
+        $posts = [
+            'discovering-manipur-one-platform' => [
+                'slug' => 'discovering-manipur-one-platform',
+                'title' => 'Discovering Manipur, One Platform at a Time',
+                'excerpt' => 'A look at how ManipurApp brings places, food, transport, tourism and local businesses together for people and visitors.',
+                'category' => 'ManipurApp Stories',
+                'tags' => ['Manipur', 'Local Business', 'Tourism', 'ManipurApp'],
+                'author' => 'ManipurApp Team',
+                'published_at' => '22 September 2026',
+                'reading_time' => '4 min read',
+                'cover_image' => 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85',
+                'photos' => [
+                    'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80',
+                ],
+                'video_url' => 'https://www.youtube.com/embed/ScMzIvxBSi4',
+                'links' => [
+                    ['label' => 'Explore ManipurApp services', 'url' => '/member/services'],
+                    ['label' => 'Become a vendor', 'url' => '/member/vendor-registration'],
+                ],
+                'content' => [
+                    ['type' => 'paragraph', 'text' => 'Manipur has places to explore, food to discover, businesses to support and local services that make everyday life easier. ManipurApp is being built around the idea that these possibilities should be easier to discover in one connected experience.'],
+                    ['type' => 'heading', 'text' => 'One platform, many possibilities'],
+                    ['type' => 'paragraph', 'text' => 'A visitor may need a destination, a place to stay, a restaurant and a taxi. A local family may need fresh food or groceries. A business owner may want to offer transport, accommodation, tourism experiences or products. The platform is designed to bring these different journeys together.'],
+                    ['type' => 'heading', 'text' => 'An opportunity for local businesses'],
+                    ['type' => 'paragraph', 'text' => 'ManipurApp is also intended to be a place where local operators and entrepreneurs can provide services. Taxi operators, restaurants, grocery sellers, tour guides, hotels, homestays, B2B suppliers and home-based makers can all become part of the wider digital ecosystem as the relevant services are opened up.'],
+                    ['type' => 'heading', 'text' => 'Built for discovery and participation'],
+                    ['type' => 'paragraph', 'text' => 'The goal is not simply to list businesses. It is to make discovery useful, connect people with real local services and create more ways for local businesses and creators to reach customers.'],
+                ],
+            ],
+        ];
+
+        if (!isset($posts[$slug])) {
+            http_response_code(404);
+            $this->view('MemberApp::Static.page', [
+                'title' => 'Blog post not found',
+                'page' => [
+                    'title' => 'Blog post not found',
+                    'eyebrow' => 'BLOG',
+                    'heading' => 'We could not find that article.',
+                    'intro' => 'The article may have been moved or is not published yet.',
+                    'sections' => [],
+                    'cta' => ['label' => 'Back to Blog', 'url' => '/member/blog'],
+                ],
+                'member' => $this->currentMember(),
+            ], 'memberapp');
+            return;
+        }
+
+        $this->view('MemberApp::Blog.post', [
+            'title' => $posts[$slug]['title'],
+            'post' => $posts[$slug],
+            'member' => $this->currentMember(),
+        ], 'memberapp');
+    }
+
+    /** GET /member/{static-page} */
+    public function staticPage(string $slug): void
+    {
+        $pages = [
+            'about' => [
+                'title' => 'About Us',
+                'eyebrow' => 'ABOUT MANIPURAPP',
+                'heading' => 'One connected platform for Manipur — for people, visitors and local businesses.',
+                'intro' => 'ManipurApp brings local services, places, food, travel and business discovery together in one simple experience. It is also a place where local people, entrepreneurs and businesses can bring their services to a wider audience.',
+                'sections' => [
+                    ['title'=>'Built for Manipur', 'body'=>'ManipurApp is designed around the needs of people visiting, living, travelling and doing business in Manipur — from everyday food and transport to tourism, stays, rentals and local products.'],
+                    ['title'=>'A platform for local opportunity', 'body'=>'You do not have to be a large company to participate. A taxi operator, hotel owner, tour guide, grocery shop, B2B supplier, home-based maker or local entrepreneur can build a presence on the platform through the services we support.'],
+                    ['title'=>'Discover and provide', 'body'=>'Customers can discover services in one place, while service providers can use ManipurApp to present what they offer, reach customers and grow their digital presence.'],
+                    ['title'=>'More than one kind of business', 'body'=>'Our ecosystem can support transport, restaurants, fresh food and groceries, tourism, tour packages, destinations, hotels, homestays, commercial vehicle rentals, marketplace products and more.'],
+                    ['title'=>'Simple to get started', 'body'=>'Becoming a member is designed to be simple. Registration can take less than two minutes, after which you can continue with the relevant vendor or business onboarding steps for the services you want to provide.'],
+                    ['title'=>'Growing with Manipur', 'body'=>'ManipurApp is being developed as a local-first digital ecosystem. New services, businesses, creators and community-led opportunities can be added as the platform grows.'],
+                ],
+                'cta' => ['label'=>'Become a member', 'url'=>'/member/register'],
+            ],
+            'contact' => [
+                'title' => 'Contact Us',
+                'eyebrow' => 'GET IN TOUCH',
+                'heading' => 'We would love to hear from you.',
+                'intro' => 'For general enquiries, partnerships, vendor support or feedback, please use the contact channels provided by the ManipurApp team.',
+                'sections' => [
+                    ['title'=>'General enquiries', 'body'=>'For product, platform and general questions, contact the ManipurApp team through your organisation\'s published support channel.'],
+                    ['title'=>'Business & vendor support', 'body'=>'Existing vendors can contact the team for onboarding, listing, service and account assistance.'],
+                    ['title'=>'Partnerships', 'body'=>'Tourism, community, logistics and business partnerships can be discussed with the ManipurApp team.'],
+                ],
+            ],
+            'faq' => [
+                'title' => 'Frequently Asked Questions',
+                'eyebrow' => 'HELP & RESOURCES',
+                'heading' => 'Common questions about ManipurApp.',
+                'intro' => 'A quick guide to using the platform.',
+                'sections' => [
+                    ['title'=>'Can I browse without an account?', 'body'=>'Yes. Public discovery pages can be browsed without logging in. An account is required for features that need a member identity, such as bookings and account activity.'],
+                    ['title'=>'Can I provide my own service?', 'body'=>'Yes. Local operators, businesses, entrepreneurs and eligible service providers can register and then follow the relevant onboarding process for supported services.'],
+                    ['title'=>'How long does registration take?', 'body'=>'Creating a basic member account is designed to take less than two minutes. Additional information may be required when setting up a particular business or service.'],
+                    ['title'=>'What is the Digital ILP Helper?', 'body'=>'It provides informational guidance about the main Inner Line Permit categories and helps users understand which information they may need before using the official Government of Manipur ILP portal.'],
+                    ['title'=>'Does ManipurApp issue an ILP?', 'body'=>'No. The Digital ILP Helper is informational. The official Government of Manipur ILP portal remains the place for the actual application.'],
+                ],
+            ],
+            'terms' => [
+                'title' => 'Terms of Use',
+                'eyebrow' => 'LEGAL',
+                'heading' => 'Using ManipurApp responsibly.',
+                'intro' => 'These terms describe the general expectations for using the ManipurApp platform.',
+                'sections' => [
+                    ['title'=>'Platform use', 'body'=>'Use ManipurApp lawfully and provide accurate information when creating an account, booking services or interacting with vendors.'],
+                    ['title'=>'Third-party services', 'body'=>'Individual services may be fulfilled by independent businesses, vendors or service providers. Their availability, pricing and fulfilment may be subject to their own terms.'],
+                    ['title'=>'Government information', 'body'=>'Government-related information, including ILP guidance, is provided for assistance and should be checked against the relevant official source before taking action.'],
+                    ['title'=>'Changes', 'body'=>'Platform features, service availability and these terms may be updated as ManipurApp develops.'],
+                ],
+            ],
+            'privacy' => [
+                'title' => 'Privacy Policy',
+                'eyebrow' => 'PRIVACY',
+                'heading' => 'Your information should be handled responsibly.',
+                'intro' => 'This page provides a concise overview of how information is treated within the ManipurApp experience.',
+                'sections' => [
+                    ['title'=>'Account information', 'body'=>'Information provided for registration, authentication, bookings and orders is used to provide the requested service and manage your account.'],
+                    ['title'=>'Service information', 'body'=>'Relevant information may be shared with the applicable service provider when necessary to fulfil a booking or order.'],
+                    ['title'=>'Security', 'body'=>'ManipurApp is designed with application-level access controls and tenant-aware data handling.'],
+                    ['title'=>'Questions', 'body'=>'For privacy-related enquiries, contact the ManipurApp team through the published support channel.'],
+                ],
+            ],
+            'vendor-registration' => [
+                'title' => 'Vendor Registration',
+                'eyebrow' => 'BECOME A MANIPURAPP VENDOR',
+                'heading' => 'Your skill, service or local business can become part of ManipurApp.',
+                'intro' => 'You can start small. If you provide something useful to people in Manipur, there may be a place for you on the platform. Register once, then follow the onboarding process for the service you want to provide.',
+                'sections' => [
+                    ['title'=>'🚕 Taxi operator', 'body'=>'Operate taxis or local transport? Bring your service to a place where visitors and residents can discover transport options.'],
+                    ['title'=>'🥬 Fresh food & grocery seller', 'body'=>'Run a grocery shop, fresh food business or local food supply operation? List supported products and make your offerings easier to discover.'],
+                    ['title'=>'📦 B2B supplier', 'body'=>'Supply products to businesses, restaurants, shops, institutions or other organisations? Use the marketplace opportunity to present your products to potential buyers.'],
+                    ['title'=>'🧳 Tour operator or guide', 'body'=>'Create tour experiences, guide visitors, showcase local knowledge and help travellers discover Manipur.'],
+                    ['title'=>'🏨 Hotel or homestay owner', 'body'=>'Have a hotel, lodge, resort, guest house or homestay? Bring your stay to travellers searching for accommodation.'],
+                    ['title'=>'🧑‍🎨 Local maker, youth or women entrepreneur', 'body'=>'Make pottery, handicrafts, local products or other goods from home? Becoming part of the marketplace can give your work a digital storefront.'],
+                ],
+                'cta' => ['label'=>'Start in less than 2 minutes', 'url'=>'/member/register'],
+            ],
+            'business-registration' => [
+                'title' => 'Business Registration',
+                'eyebrow' => 'START YOUR BUSINESS JOURNEY',
+                'heading' => 'Register once. Build your presence. Grow across services.',
+                'intro' => 'ManipurApp is designed for business owners and entrepreneurs who may operate one business today and add more services or businesses tomorrow.',
+                'sections' => [
+                    ['title'=>'One simple starting point', 'body'=>'Create your ManipurApp account once. Your account becomes the starting point for participating in the platform and managing supported business activities.'],
+                    ['title'=>'Multiple opportunities', 'body'=>'A business owner can participate in relevant areas such as taxi, food, fresh food, tourism, stays, commercial rentals or marketplace selling, subject to the onboarding requirements of each service.'],
+                    ['title'=>'For established businesses', 'body'=>'Hotels, restaurants, tour operators, transport operators, suppliers and other local businesses can use ManipurApp to create a digital presence and connect with customers.'],
+                    ['title'=>'For new entrepreneurs', 'body'=>'You do not need to start with a large operation. A home-based maker, youth entrepreneur, women-led business or small local seller can begin with the service that fits them.'],
+                    ['title'=>'Quick account creation', 'body'=>'Basic membership registration is designed to take less than two minutes. Service-specific onboarding can then collect the additional information required for your business.'],
+                    ['title'=>'One ecosystem', 'body'=>'Instead of creating a separate digital identity for every opportunity, ManipurApp aims to give local entrepreneurs one connected platform from which they can grow.'],
+                ],
+                'cta' => ['label'=>'Create your account', 'url'=>'/member/register'],
+            ],
+        ];
+
+        if (!isset($pages[$slug])) {
+            http_response_code(404);
+            $this->view('MemberApp::Static.page', ['title'=>'Page not found','page'=>[
+                'title'=>'Page not found','eyebrow'=>'MANIPURAPP','heading'=>'We could not find that page.','intro'=>'The requested information page is not available.','sections'=>[]
+            ]], 'memberapp');
+            return;
+        }
+
+        $page = $pages[$slug];
+        $this->view('MemberApp::Static.page', [
+            'title' => $page['title'],
+            'page' => $page,
+        ], 'memberapp');
+    }
+
+    /** GET /member/services */
+    public function services(): void
+    {
+        $this->view('MemberApp::Static.services', [
+            'title' => 'ManipurApp Services',
+        ], 'memberapp');
+    }
+
+    /** GET /member/services/{service} */
+    public function servicePage(string $service): void
+    {
+        $services = [
+            'taxi' => ['title'=>'Taxi', 'icon'=>'🚕', 'description'=>'Discover configured local taxi services and make transport planning easier.', 'url'=>'/member/taxi'],
+            'commercial-vehicle-rental' => ['title'=>'Commercial Vehicle Rental', 'icon'=>'🚚', 'description'=>'Find commercial vehicles for business, logistics, events and other rental needs.', 'url'=>'/member/commercial-rental'],
+            'tour-packages' => ['title'=>'Tour Packages', 'icon'=>'🧳', 'description'=>'Explore packaged travel experiences designed around destinations and local experiences.', 'url'=>'/member/tourism/packages'],
+            'destinations' => ['title'=>'Destinations', 'icon'=>'🏞️', 'description'=>'Discover places, landscapes and cultural destinations across Manipur.', 'url'=>'/member/tourism/destinations'],
+            'ilp-helper' => ['title'=>'Digital ILP Helper', 'icon'=>'🪪', 'description'=>'Understand the main Inner Line Permit categories and check the information you may need before visiting the official portal.', 'url'=>'/member/ilp'],
+            'trip-planner' => ['title'=>'Trip Planner', 'icon'=>'🗺️', 'description'=>'Build a Manipur journey by combining destinations, stays, packages, experiences, events and other services.', 'url'=>'/member/tourism/trips'],
+            'fresh-food-groceries' => ['title'=>'Fresh Food & Groceries', 'icon'=>'🥬', 'description'=>'Discover fresh food, groceries and local food businesses available through the platform.', 'url'=>'/member/fresh-food'],
+            'restaurants' => ['title'=>'Restaurants & Food Ordering', 'icon'=>'🍛', 'description'=>'Discover local restaurants, menus and supported food ordering services.', 'url'=>'/member/restaurants'],
+            'homestays-hotels' => ['title'=>'Homestays & Hotels', 'icon'=>'🏨', 'description'=>'Find stays, hotels, lodges and homestays for your Manipur journey.', 'url'=>'/member/tourism/stays'],
+        ];
+
+        if (!isset($services[$service])) {
+            http_response_code(404);
+            $this->view('MemberApp::Static.page', ['title'=>'Service not found','page'=>[
+                'title'=>'Service not found','eyebrow'=>'MANIPURAPP SERVICES','heading'=>'We could not find that service.','intro'=>'Please return to the services directory.','sections'=>[]
+            ]], 'memberapp');
+            return;
+        }
+
+        $item = $services[$service];
+        $this->view('MemberApp::Static.service', [
+            'title' => $item['title'],
+            'service' => $item,
+        ], 'memberapp');
     }
 
     /** GET /member/profile */

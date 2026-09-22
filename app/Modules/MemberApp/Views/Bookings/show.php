@@ -273,3 +273,4 @@ document.getElementById('cancelBtn')?.addEventListener('click',async()=>{
 });
 })();
 </script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

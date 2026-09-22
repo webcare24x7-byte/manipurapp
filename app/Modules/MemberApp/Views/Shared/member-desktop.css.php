@@ -146,3 +146,23 @@
   .ma-tour,.mr2-page,.rs-page,.ri-page,.ma-profile,.ma-book,.ma-bshow,.fc-page,.fco-page,.fo-page,.fi-page,.fs-page,.ff2-page,.co-page,.ma-auth-page,.ma-register-page{padding-top:24px!important}
 }
 </style>
+
+<style>
+/* Desktop-only MemberApp footer. PWA/mobile navigation remains unchanged. */
+.member-desktop-footer{display:none}
+@media (min-width:900px){
+  .member-desktop-footer{display:block;margin-top:42px;background:#102b24;color:#dcebe5;border-top:1px solid #1e493d}
+  .member-desktop-footer-inner{max-width:1480px;margin:0 auto;padding:42px 42px 34px;display:grid;grid-template-columns:1.45fr repeat(4,minmax(150px,1fr));gap:34px}
+  .member-footer-brand{display:flex;gap:14px;align-items:flex-start;padding-right:20px}
+  .member-footer-logo{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:#087d64;color:#fff;text-decoration:none;font-size:24px;flex:none;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+  .member-footer-brand strong{font-size:21px;color:#fff;letter-spacing:-.5px}
+  .member-footer-brand p{margin:3px 0 9px;color:#8fc4b2;font-size:10px;font-weight:800}
+  .member-footer-brand small{display:block;max-width:270px;color:#a8bdb6;font-size:10px;line-height:1.6}
+  .member-footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .member-footer-column h3{margin:2px 0 7px;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:1.1px}
+  .member-footer-column a{color:#a9beb7;text-decoration:none;font-size:10px;line-height:1.35;transition:color .15s ease,transform .15s ease}
+  .member-footer-column a:hover{color:#fff;transform:translateX(2px)}
+  .member-footer-bottom{max-width:1480px;margin:0 auto;padding:15px 42px 18px;border-top:1px solid rgba(220,235,229,.12);display:flex;justify-content:space-between;gap:20px;color:#78938a;font-size:9px}
+  .ma-home-v13 .home-foot{display:none!important}
+}
+</style>

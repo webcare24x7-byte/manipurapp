@@ -38,3 +38,4 @@ if(!$order){$orders=is_array($orders??null)?$orders:[];$up=['PENDING','ACCEPTED'
  check(); setInterval(check,10000);
 })();
 </script><?php endif; ?>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

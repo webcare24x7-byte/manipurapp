@@ -10,3 +10,4 @@ include __DIR__ . '/../Shared/member-desktop-header.php';
 <?php include __DIR__ . '/../Shared/member-notification-widget.php'; ?>
 </div>
 <nav class="mp-nav"><a href="<?=maPe($basePath)?>/member"><i>⌂</i>Home</a><a href="<?=maPe($basePath)?>/member/taxi"><i>🚕</i>Services</a><a href="<?=maPe($basePath)?>/member/bookings"><i>▣</i>Bookings</a><a class="active" href="<?=maPe($basePath)?>/member/profile"><i>♙</i>Profile</a></nav>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

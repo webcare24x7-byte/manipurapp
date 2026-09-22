@@ -54,6 +54,8 @@ $money=static function($v):string{ $n=(float)$v; return '₹'.number_format($n,2
  <a class="ma-nav-item" href="<?=maTourEsc($basePath)?>/member">⌂<span>Home</span></a>
  <a class="ma-nav-item" href="<?=maTourEsc($basePath)?>/member/tourism">⌖<span>Explore</span></a>
  <a class="ma-nav-item" href="<?=maTourEsc($basePath)?>/member/bookings">▣<span>Bookings</span></a>
+ <a class="ma-nav-item ma-nav-ilp" href="<?= maTourEsc($basePath) ?>/member/ilp">▤<span>ILP</span></a>
+ <a class="ma-nav-item ma-nav-ai" href="<?= maTourEsc($basePath) ?>/member#ask-ai">✦<span>Ask AI</span></a>
  <a class="ma-nav-item active" href="<?=maTourEsc($basePath)?>/member/tourism/trips">♡<span>Trips</span></a>
  <a class="ma-nav-item" href="<?=maTourEsc($basePath)?>/member/profile">●<span>Profile</span></a>
 </nav>
@@ -139,3 +141,4 @@ item.addEventListener('change',()=>{title.value=item.options[item.selectedIndex]
 document.getElementById('tripAddForm')?.addEventListener('submit',()=>{const extra=collectDetails();if(extra){notes.value=notes.value.trim()?notes.value.trim()+' · '+extra:extra;}});
 })();
 </script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>

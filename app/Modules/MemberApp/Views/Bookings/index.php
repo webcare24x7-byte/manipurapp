@@ -67,3 +67,4 @@ document.querySelectorAll('[data-service-filter]').forEach(b=>b.addEventListener
 applyFilters();
 })();
 </script>
+<?php include __DIR__ . '/../Shared/member-desktop-footer.php'; ?>
