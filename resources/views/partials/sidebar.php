@@ -655,7 +655,30 @@ $icon = static function (string $name): string {
         Tourism
     </span>
 </a>
+<a
+    href="<?= config('app.base_path') ?>/ilp"
+    class="<?= $active('/ilp') ?>"
+>
+    <span class="menu-icon">
+        <?= $icon('file-text') ?>
+    </span>
 
+    <span class="menu-text">
+        Digital ILP Helper
+    </span>
+</a>
+<a
+    href="<?= config('app.base_path') ?>/ai-assistant"
+    class="<?= $active('/ai-assistant') ?>"
+>
+    <span class="menu-icon">
+        <?= $icon('sparkles') ?>
+    </span>
+
+    <span class="menu-text">
+        Smart AI
+    </span>
+</a>
     </div>
 
 

@@ -1846,3 +1846,48 @@ CREATE TABLE `users` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- Table structure for table `ilp_permit_types`
+-- --------------------------------------------------------
+
+CREATE TABLE `ilp_permit_types` (
+  `id` bigint UNSIGNED NOT NULL,
+  `code` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `purpose_summary` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `validity_summary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sponsor_summary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `renewal_summary` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `application_summary` text COLLATE utf8mb4_unicode_ci,
+  `official_url` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `source_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `source_verified_at` date DEFAULT NULL,
+  `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
+  `sort_order` smallint UNSIGNED NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Table structure for table `ilp_requirements`
+-- --------------------------------------------------------
+
+CREATE TABLE `ilp_requirements` (
+  `id` bigint UNSIGNED NOT NULL,
+  `permit_code` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `requirement_type` enum('DOCUMENT','INFORMATION','SPONSOR','PROCESS','WARNING') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `required_flag` tinyint(1) NOT NULL DEFAULT '1',
+  `sort_order` smallint UNSIGNED NOT NULL DEFAULT '0',
+  `status` enum('Active','Inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Active',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

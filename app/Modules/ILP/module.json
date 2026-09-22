@@ -1,0 +1,23 @@
+{
+  "name": "ilp",
+  "display_name": "Digital ILP Helper",
+  "version": "0.1.0",
+  "phase": 1,
+  "tenant_isolated": false,
+  "business_owned": false,
+  "namespace": "App\\Modules\\ILP",
+  "dependencies": ["permissions"],
+  "routes": "routes.php",
+  "migrations": [
+    "Migrations/001_create_ilp_helper.sql",
+    "Migrations/002_ilp_permissions.sql"
+  ],
+  "features": [
+    "ilp_information",
+    "permit_type_guidance",
+    "eligibility_precheck",
+    "application_checklist",
+    "official_source_links",
+    "backend_test_workflow"
+  ]
+}

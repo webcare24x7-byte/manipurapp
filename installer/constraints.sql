@@ -1581,3 +1581,35 @@ ALTER TABLE `tourism_trip_plan_items`
   ADD CONSTRAINT `fk_tourism_trip_item_tenant` FOREIGN KEY (`tenant_id`) REFERENCES `tenants` (`id`) ON DELETE CASCADE;
 
 SET FOREIGN_KEY_CHECKS=1;
+
+-- Indexes for table `ilp_permit_types`
+ALTER TABLE `ilp_permit_types`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uq_ilp_permit_code` (`code`),
+  ADD KEY `idx_ilp_permit_status` (`status`),
+  ADD KEY `idx_ilp_permit_sort` (`sort_order`);
+
+-- Indexes for table `ilp_requirements`
+ALTER TABLE `ilp_requirements`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_ilp_req_code` (`permit_code`),
+  ADD UNIQUE KEY `uq_ilp_req` (`permit_code`,`requirement_type`,`title`),
+  ADD KEY `idx_ilp_req_type` (`requirement_type`);
+
+-- AUTO_INCREMENT for table `ilp_permit_types`
+ALTER TABLE `ilp_permit_types`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+-- AUTO_INCREMENT for table `ilp_requirements`
+ALTER TABLE `ilp_requirements`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+-- AUTO_INCREMENT for table `permissions`
+ALTER TABLE `permissions`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=285;
+
+-- Constraints for table `ilp_requirements`
+ALTER TABLE `ilp_requirements`
+  ADD CONSTRAINT `fk_ilp_req_permit_code` FOREIGN KEY (`permit_code`) REFERENCES `ilp_permit_types` (`code`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+SET FOREIGN_KEY_CHECKS=1;
