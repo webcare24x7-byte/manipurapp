@@ -1,6 +1,8 @@
 # ManipurApp v1.0.0
 
-ManipurApp is an open-source, multi-tenant platform for local businesses, entrepreneurs, service providers and customers in Manipur.
+ManipurApp is an open-source, multi-tenant platform for local businesses, entrepreneurs, service providers and customers.
+
+<img width="1536" height="1024" alt="Preview-ManipurApp" src="https://github.com/user-attachments/assets/041da3bf-81e7-4505-b4fa-f4341d751ba7" />
 
 ## Quick start
 
@@ -43,6 +45,8 @@ The demo seed is intentionally limited to the current tenant #1 dataset and shar
 ## AI configuration
 
 AI features require the appropriate provider credentials. Do not commit real API keys. Configure them locally according to the module documentation.
+
+Important:- app/Modules/AI/Config/gemini.php >> Supply your Gemini API KEY /groq.php >> Supply your Groq API KEY
 
 ## Development
 
