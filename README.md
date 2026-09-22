@@ -1,6 +1,12 @@
 # ManipurApp v1.0.0
 
-ManipurApp is an open-source, multi-tenant platform for local businesses, entrepreneurs, service providers and customers.
+ManipurApp is an open-source, multi-tenant platform built to power multi-service businesses and local digital marketplaces from a single platform.
+
+Built-in services: Restaurant ordering & delivery • Fresh food & grocery marketplace • Taxi booking & rentals • Commercial vehicle rentals • Tour packages • Hotels & homestays • Tour guide listings
+
+Upcoming: Multi-vendor marketplace • On-demand services (plumbers, electricians, housekeeping, mechanics, etc.) • Home services • Local shops & retail • Courier & delivery services • Event & activity bookings.
+
+<img width="1536" height="1024" alt="ManipurApp-desktopView" src="https://github.com/user-attachments/assets/688982fc-a7d6-4763-8c68-4490a0577b3d" />
 
 <img width="1536" height="1024" alt="Preview-ManipurApp" src="https://github.com/user-attachments/assets/041da3bf-81e7-4505-b4fa-f4341d751ba7" />
 
