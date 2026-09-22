@@ -31,6 +31,18 @@ final class AIQuestion
         return (int)$this->db->lastInsertId();
     }
 
+    public function latestForUserQuestion(int $tenantId, int $userId, string $question, string $since): ?array
+    {
+        $rows = $this->db->fetchAll(
+            'SELECT id,question,answer,model,latency_ms,status,ai_scope,records_found,created_at
+             FROM ai_questions
+             WHERE tenant_id=? AND user_id=? AND question=? AND created_at>=?
+             ORDER BY id DESC LIMIT 1',
+            [$tenantId, $userId, $question, $since]
+        );
+        return $rows[0] ?? null;
+    }
+
     public function recent(int $tenantId, int $limit = 30): array
     {
         $limit = max(1,min(100,$limit));
